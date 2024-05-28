@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.loaded .Hero {
+  display: block;
+}
+
+.Hero {
+  display: none;
+}
+@keyframes spin {
+  0% { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
+    transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
+  }
+  100% { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
+    transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
+  }
+}
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: black;
+  z-index: 99; /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
+  transform: translateX(0); /* Firefox 16+, IE 10+, Opera */
+}
+
+#loader-wrapper .loader-section.section-left, #loader-wrapper .loader-section.section-top {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right, #loader-wrapper .loader-section.section-bottom {
+  right: 0;
+}
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-up { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
+  transform: translateY(-100%); /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-bottom { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
+  transform: translateY(100%); /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-left { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
+  transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-right { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
+  transform: translateX(100%); /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded {
+  overflow: auto;
+}
+
+.loaded #loader {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+  transition: all 0.3s 3s ease-out;
+}
+
+.loaded #loader-wrapper .loader-section.section-up,
+.loaded #loader-wrapper .loader-section.section-bottom,
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+  transition: all 2.7s 0.3s cubic-bezier(0.39, 1.05, 0.64, -0.04);
+}
+
+/*END OF LOADER ======================================*/
+header {
+  position: relative;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+header .Logo {
+  position: relative;
+  z-index: 9999;
+}
+header .Logo img {
+  width: 70%;
+}
+header .Logo::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 5%;
+  background-color: white;
+  height: 3px;
+  left: 15px;
+  animation: moveRightLeft 1s 6 ease-out;
+}
+@keyframes moveRightLeft {
+  0%, 100% {
+    left: 15px;
+  }
+  50% {
+    left: 60%;
+  }
+}
+
+.Hero .VideoArea {
+  position: relative;
+}
+.Hero .VideoArea video {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.Hero .VideoArea .TextArea {
+  position: absolute;
+  z-index: 99;
+  bottom: 20%;
+  width: 45%;
+  left: 30px;
+}
+.Hero .VideoArea .TextArea h1 {
+  font-size: 60px;
+  color: white;
+  font-weight: 500;
+}
+
+.SlideDown {
+  padding: 3rem 0;
+}
+.SlideDown .BigText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.SlideDown .BigText h2 {
+  font-size: 50px;
+  font-weight: 400;
+}
+.SlideDown .LittleText {
+  display: flex;
+  justify-content: end;
+  margin-top: 3rem;
+}
+.SlideDown .LittleText h4 {
+  font-size: 25px;
+  font-weight: 400;
+  width: 50%;
+}
+
+.ThreeSection {
+  background-color: #0b203a;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  margin: 3rem 0;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+#particleCanvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}/*# sourceMappingURL=style.css.map */
