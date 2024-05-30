@@ -7,6 +7,14 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+body p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+  text-align: justify;
+}
+
 #loader-wrapper {
   position: fixed;
   top: 0;
@@ -141,6 +149,70 @@ header .Logo::after {
   font-size: 60px;
   color: white;
   font-weight: 500;
+}
+
+.ServicesHero .VideoArea {
+  position: relative;
+}
+.ServicesHero .VideoArea video {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ServicesHero .VideoArea .TextArea {
+  position: absolute;
+  z-index: 99;
+  bottom: 20%;
+  width: 45%;
+  left: 30px;
+}
+.ServicesHero .VideoArea .TextArea .LineHead {
+  position: relative;
+  color: wheat;
+  left: 50px;
+  font-size: 18px;
+}
+.ServicesHero .VideoArea .TextArea .LineHead::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  width: 40px;
+  height: 3px;
+  z-index: 99;
+  color: white;
+  background-color: white;
+  bottom: 10px;
+}
+.ServicesHero .VideoArea .TextArea h1 {
+  font-size: 50px;
+  color: white;
+  font-weight: 500;
+}
+
+.DetailPage {
+  padding: 3rem 0;
+}
+.DetailPage .BigText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DetailPage .BigText h2 {
+  font-size: 50px;
+  font-weight: 400;
+}
+.DetailPage .LittleText {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  text-align: center;
+}
+.DetailPage .LittleText p {
+  font-size: 18px;
+  font-weight: 400;
+  width: 60%;
+  color: #666;
 }
 
 .SlideDown {
@@ -504,6 +576,7 @@ footer .bg-overlay {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 0;
 }
 footer .bg-overlay::before {
   content: "";
@@ -532,6 +605,7 @@ footer h5 {
   margin-bottom: 0.5rem;
 }
 footer p {
+  color: white;
   font-size: 1rem;
   margin: 0.25rem 0;
 }
@@ -554,4 +628,134 @@ footer .list-unstyled a:hover {
 }
 footer .z-Ind {
   z-index: 9;
+}
+footer .pad-5 {
+  position: relative;
+}
+footer .CopyRightArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  position: relative;
+}
+footer .CopyRightArea::after {
+  content: "";
+  position: absolute;
+  left: -80px; /* Sol taraftan 80 piksel sola */
+  width: calc(100% + 160px); /* Orijinal genişliğe her iki taraftan 80 piksel ekle */
+  height: 1px;
+  background-color: #979595;
+  top: 10px;
+}
+footer .CopyRightArea::before {
+  content: "";
+  position: absolute;
+  left: -80px; /* Sol taraftan 80 piksel sola */
+  width: calc(100% + 160px); /* Orijinal genişliğe her iki taraftan 80 piksel ekle */
+  height: 1px;
+  background-color: #979595;
+  bottom: 10px;
+}
+footer .CopyRightArea .col-md-6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .CopyRightArea .col-md-6 span {
+  color: white;
+  font-size: 13px;
+  z-index: 9;
+}
+footer .NextPagearea {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("/mnt/data/Ekran Resmi 2024-05-30 16.41.45.png") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .content {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+footer .content:hover {
+  transform: scale(1.1);
+}
+footer .content:hover .circle {
+  background-color: rgb(255, 255, 255);
+}
+footer .content:hover .circle span {
+  color: #007BFF;
+}
+footer .content:hover .about-link {
+  color: #007BFF;
+}
+footer .circle {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+footer .circle span {
+  font-size: 40px;
+  color: #000;
+  transition: color 0.3s ease;
+}
+footer .about-link {
+  font-size: 40px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dna-section {
+  padding: 50px 0;
+}
+.dna-section .bordered-title {
+  position: relative;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.dna-section .bordered-title::before, .dna-section .bordered-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1882352941);
+}
+.dna-section .bordered-title::before {
+  top: -10px;
+}
+.dna-section .bordered-title::after {
+  bottom: -10px;
+}
+.dna-section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.dna-section p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.dna-section .img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.dna-section .TopImg {
+  position: relative;
+}
+.dna-section .TopImg img {
+  transform: translateY(-50px);
 }/*# sourceMappingURL=style.css.map */
