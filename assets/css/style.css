@@ -23,28 +23,11 @@ body {
 .Hero {
   display: none;
 }
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: rotate(0deg); /* IE 9 */
-    transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
-  }
-  100% {
-    -webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: rotate(360deg); /* IE 9 */
-    transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
-  }
-}
 @keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: rotate(0deg); /* IE 9 */
+  0% { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
     transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
   }
-  100% {
-    -webkit-transform: rotate(360deg); /* Chrome, Opera 15+, Safari 3.1+ */
-    -ms-transform: rotate(360deg); /* IE 9 */
+  100% { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
     transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
   }
 }
@@ -54,9 +37,7 @@ body {
   width: 51%;
   height: 100%;
   background: black;
-  z-index: 99;
-  -webkit-transform: translateX(0); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: translateX(0); /* IE 9 */
+  z-index: 99; /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
   transform: translateX(0); /* Firefox 16+, IE 10+, Opera */
 }
 
@@ -69,27 +50,19 @@ body {
 }
 
 /* Loaded */
-.loaded #loader-wrapper .loader-section.section-up {
-  -webkit-transform: translateY(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: translateY(-100%); /* IE 9 */
+.loaded #loader-wrapper .loader-section.section-up { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
   transform: translateY(-100%); /* Firefox 16+, IE 10+, Opera */
 }
 
-.loaded #loader-wrapper .loader-section.section-bottom {
-  -webkit-transform: translateY(100%); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: translateY(100%); /* IE 9 */
+.loaded #loader-wrapper .loader-section.section-bottom { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
   transform: translateY(100%); /* Firefox 16+, IE 10+, Opera */
 }
 
-.loaded #loader-wrapper .loader-section.section-left {
-  -webkit-transform: translateX(-100%); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: translateX(-100%); /* IE 9 */
+.loaded #loader-wrapper .loader-section.section-left { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
   transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
 }
 
-.loaded #loader-wrapper .loader-section.section-right {
-  -webkit-transform: translateX(100%); /* Chrome, Opera 15+, Safari 3.1+ */
-  -ms-transform: translateX(100%); /* IE 9 */
+.loaded #loader-wrapper .loader-section.section-right { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
   transform: translateX(100%); /* Firefox 16+, IE 10+, Opera */
 }
 
@@ -99,13 +72,11 @@ body {
 
 .loaded #loader {
   opacity: 0;
-  -webkit-transition: all 0.8s ease-out;
   transition: all 0.8s ease-out;
 }
 
 .loaded #loader-wrapper {
   visibility: hidden;
-  -webkit-transition: all 0.3s 3s ease-out;
   transition: all 0.3s 3s ease-out;
 }
 
@@ -113,7 +84,6 @@ body {
 .loaded #loader-wrapper .loader-section.section-bottom,
 .loaded #loader-wrapper .loader-section.section-right,
 .loaded #loader-wrapper .loader-section.section-left {
-  -webkit-transition: all 2.7s 0.3s cubic-bezier(0.39, 1.05, 0.64, -0.04);
   transition: all 2.7s 0.3s cubic-bezier(0.39, 1.05, 0.64, -0.04);
 }
 
@@ -157,7 +127,8 @@ header .Logo::after {
 .Hero .VideoArea video {
   width: 100%;
   height: 100vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .Hero .VideoArea .TextArea {
   position: absolute;
@@ -311,7 +282,7 @@ header .Logo::after {
 }
 .MissionVisionSection p {
   font-size: 18px;
-  color: #383838;
+  color: #666;
   line-height: 1.6;
   text-align: justify;
   width: 80%;
@@ -459,7 +430,7 @@ header .Logo::after {
 .InfoSection .content .stats .stat-item i {
   font-size: 2rem;
   color: #007bff;
-  margin-right: 0.5rem;
+  margin-right: 0.6rem;
 }
 .InfoSection .content .stats .stat-item div {
   display: flex;
@@ -475,17 +446,17 @@ header .Logo::after {
   color: #666;
 }
 .InfoSection .content .contact-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.75rem 1.5rem;
-  background-color: #007bff;
-  color: #fff;
+  display: inline-block;
+  background-color: rgb(11, 32, 58);
+  color: rgb(255, 255, 255);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
   text-decoration: none;
-  border-radius: 25px;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  font-weight: bold;
 }
 .InfoSection .content .contact-button i {
-  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .InfoSection .content .contact-button:hover {
   background-color: #0056b3;
@@ -502,7 +473,8 @@ header .Logo::after {
 .InfoSection .video img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .InfoSection .video .play-button {
   position: absolute;
@@ -521,4 +493,65 @@ header .Logo::after {
 }
 .InfoSection .video .play-button:hover {
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+footer .bg-overlay {
+  background: url("https://placehold.co/1920x1080") no-repeat center center/cover;
+  position: relative;
+  padding: 50px 80px;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .bg-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+footer .text-center {
+  position: relative;
+  z-index: 1;
+}
+footer .list-inline-item a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+footer .list-inline-item a:hover {
+  color: #007bff;
+}
+footer h5 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+footer p {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+footer .btn {
+  font-size: 1.2rem;
+}
+footer .logo {
+  width: 100px;
+}
+footer .list-unstyled li {
+  margin-bottom: 0.5rem;
+}
+footer .list-unstyled a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+footer .list-unstyled a:hover {
+  color: #007bff;
+}
+footer .z-Ind {
+  z-index: 9;
 }/*# sourceMappingURL=style.css.map */

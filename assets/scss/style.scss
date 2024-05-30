@@ -336,7 +336,7 @@ header {
 
     p {
         font-size: 18px;
-        color: #383838;
+        color: #666;
         line-height: 1.6;
         text-align: justify;
         width: 80%;
@@ -511,7 +511,7 @@ header {
                 i {
                     font-size: 2rem;
                     color: #007bff;
-                    margin-right: 0.5rem;
+                    margin-right: 0.6rem;
                 }
 
                 div {
@@ -533,17 +533,17 @@ header {
         }
 
         .contact-button {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.75rem 1.5rem;
-            background-color: #007bff;
-            color: #fff;
+            display: inline-block;
+            background-color: rgb(11, 32, 58);
+            color: rgb(255, 255, 255);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
             text-decoration: none;
-            border-radius: 25px;
-            transition: background-color 0.3s;
+            font-size: 1rem;
+            font-weight: bold;
 
             i {
-                margin-left: 0.5rem;
+                margin-right: .5rem;
             }
 
             &:hover {
@@ -587,5 +587,79 @@ header {
                 background-color: rgba(0, 0, 0, 0.7);
             }
         }
+    }
+}
+
+footer {
+    .bg-overlay {
+        background: url('https://placehold.co/1920x1080') no-repeat center center/cover; // Arka plan resmi
+        position: relative;
+        padding: 50px 80px;
+        width: 100%;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bg-overlay::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6); // Koyu arka plan üstüne opaklık
+        z-index: 0;
+    }
+
+    .text-center {
+        position: relative;
+        z-index: 1;
+    }
+
+    .list-inline-item a {
+        color: #fff;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+    }
+
+    .list-inline-item a:hover {
+        color: #007bff;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin: 0.25rem 0;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        width: 100px; // Logo boyutu, gerektiğinde değiştirilebilir
+    }
+
+    .list-unstyled li {
+        margin-bottom: 0.5rem;
+    }
+
+    .list-unstyled a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .list-unstyled a:hover {
+        color: #007bff;
+    }
+    .z-Ind{
+        z-index: 9;
     }
 }
