@@ -92,3 +92,40 @@ document.addEventListener('DOMContentLoaded', () => {
         init(); 
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const section = document.querySelector('.SwiperSection');
+    const defaultBg = section.getAttribute('data-default-bg');
+    section.style.backgroundImage = `url(${defaultBg})`;
+
+    const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 5,
+        spaceBetween: 5,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+    const slides = document.querySelectorAll('.swiper-slide');
+
+    slides.forEach(slide => {
+        slide.addEventListener('mouseenter', () => {
+            const bg = slide.getAttribute('data-bg');
+            section.style.backgroundImage = `url(${bg})`;
+        });
+
+        slide.addEventListener('mouseleave', () => {
+            section.style.backgroundImage = `url(${defaultBg})`; // Hover'dan çıkınca varsayılan arka plana dön
+        });
+
+        slide.addEventListener('click', () => {
+            const url = slide.getAttribute('data-url');
+            window.location.href = url;
+        });
+    });
+});
