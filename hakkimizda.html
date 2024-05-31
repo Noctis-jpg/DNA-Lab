@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DEVYM</title>
+  <meta name="author" content="DEVYM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="assets/css/particle.css">
+</head>
+<body>
+
+  <div id="container">
+
+
+  </div>
+  <div>Yunus MADEN</div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/DRACOLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <script id="vertexShader" type="x-shader/x-vertex">
+    uniform float time;
+    varying vec2 vUv;
+    varying vec3 vPosition;
+    varying float vColorRandom;
+    uniform sampler2D texture1;
+    
+    attribute float randoms;
+    attribute float colorRandoms;
+    
+    float PI = 3.141592653589793238;
+    void main() {
+      vUv = uv;
+      vColorRandom = colorRandoms;
+      vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+      gl_PointSize = (30.0 * randoms + 5.0) * (1.0 / -mvPosition.z);
+      gl_Position = projectionMatrix * mvPosition;
+    }
+  </script>
+  
+  <script id="fragmentShader" type="x-shader/x-fragment">
+    uniform float time;
+    uniform float progress;
+    uniform sampler2D texture1;
+    uniform vec4 resolution;
+    varying vec2 vUv;
+    varying vec3 vPosition;
+    varying float vColorRandom;
+    
+    uniform vec3 uColor1;
+    uniform vec3 uColor2;
+    uniform vec3 uColor3;
+    float PI = 3.141592653589793238;
+    void main() {
+        float alpha = 1.0 - smoothstep(-0.2, 0.5, length(gl_PointCoord - vec2(0.5)));
+        
+        vec3 finalColor = uColor1;
+        if (vColorRandom > 0.33 && vColorRandom < 0.66) {
+            finalColor = uColor2;
+        }
+        if (vColorRandom > 0.66) {
+            finalColor = uColor3;
+        }
+        
+        float gradient = smoothstep(0.3, 0.7, vUv.y);
+        
+        gl_FragColor = vec4(finalColor, alpha * gradient);
+    }
+  </script>
+
+  <script src="assets/js/particle.js"></script>
+</body>
+</html>
