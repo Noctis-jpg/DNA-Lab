@@ -8,7 +8,7 @@ class Sketch {
       this.renderer = new THREE.WebGLRenderer();
       this.renderer.setPixelRatio(window.devicePixelRatio);
       this.renderer.setSize(this.width, this.height);
-      this.renderer.setClearColor(0x141414, 1); 
+      this.renderer.setClearColor(0xffffff, 1); 
       this.renderer.outputColorSpace = THREE.SRGBColorSpace;
   
       this.container.appendChild(this.renderer.domElement);
@@ -25,14 +25,14 @@ class Sketch {
   
       this.dracoLoader = new THREE.DRACOLoader();
       this.dracoLoader.setDecoderPath('/draco/');
-      // this.dracoLoader.setDecoderPath('/dna-lab/draco/');
+    //   this.dracoLoader.setDecoderPath('/dna-lab/draco/');
 
       this.loader = new THREE.GLTFLoader();
       this.loader.setDRACOLoader(this.dracoLoader);
       
       this.loader.load(
           '/assets/model/dna.gltf',
-          // '/dna-lab/assets/model/dna.gltf',
+        //   '/dna-lab/assets/model/dna.gltf',
 
           (gltf) => {
               console.log(gltf.scene.children[0].geometry);
@@ -48,12 +48,12 @@ class Sketch {
   
       window.addEventListener("wheel", event => {
         if (this.dna) {
-          this.dna.rotation.y += event.deltaY * 0.002;
+          this.dna.rotation.y += event.deltaY * 0.001;
           const scrollableEnd = document.documentElement.scrollHeight - window.innerHeight;
   
           if (window.scrollY >= scrollableEnd || window.scrollY <= 0) {
           } else { 
-            this.dna.position.y += event.deltaY * 0.002;
+            this.dna.position.y += event.deltaY * 0.001;
           }
         }
       });
@@ -82,19 +82,20 @@ class Sketch {
         side: THREE.DoubleSide,
         uniforms: {
           time: { value: 0 },
-          uColor1: { value: new THREE.Color(0x0c0317) },
-          uColor2: { value: new THREE.Color(0x170624) },
-          uColor3: { value: new THREE.Color(0x07112e) },
+          uColor1: { value: new THREE.Color(0x89a8d8) },
+          uColor2: { value: new THREE.Color(0x385dab) },
+          uColor3: { value: new THREE.Color(0x1d376c) },
           resolution: { value: new THREE.Vector4() }
         },
-        transparent: true,
+        transparent: true, // Şeffaflığı kapatmak
         vertexShader: vertex,
         fragmentShader: fragment,
-        depthTest: false,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending
+        depthTest: true,
+        depthWrite: true,
+        blending: THREE.NormalBlending // Normal Blending kullanmak
       });
-  
+      
+      
       this.number = this.geometry.attributes.position.array.length;
       let randoms = new Float32Array(this.number / 3);
       let colorRandoms = new Float32Array(this.number / 3);
@@ -119,8 +120,8 @@ class Sketch {
       }
   
       this.starsMaterial = new THREE.PointsMaterial({
-        size: 0.006,
-        color: 0xa9a9a9
+        size: 0.01,
+        color: 0x161616
       });
   
       this.starsGeometry.setAttribute('position', new THREE.BufferAttribute(this.posArray, 3));
