@@ -5,13 +5,98 @@
   <title>DEVYM</title>
   <meta name="author" content="DEVYM">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/particle.css">
 </head>
 <body>
-
-  <div id="container"></div>
-  <div></div>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="Logo">
+                        <img src="./assets/images/dna-logo.png" alt="" srcset="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+  <div id="container_ym_sy"></div>
+  <div class="sections">
+    <section class="section active" id="section1">
+        <div class="container">
+            <div class="SectionMainWrap">
+            <h1>LOREM IPSUM DOLOR SİT AMET</h1>
+      <p>DNA Laboratuvarları Genetik Hastalıklar Değerlendirme Merkezi; alanında uzman kadrosu ve güncel teknolojiyle entegre olmuş cihaz parkuruyla 2015 yılında kurulmuştur. DNA Laboratuvarları sektördeki eksikleri tespit edip geliştirerek devam ettiği bu yolda; sitogenetik, moleküler sitogenetik, moleküler genetik, kanser genetiği ve bilimsel proje alanlarında hizmet vermektedir. Türkiye pazarında kurulduğu günden bu yana devlet hastaneleri, özel hastaneler ve özel muayenehaneler alanlarında ortak çalışmalar yürüten bir merkezdir. Uygulanabilir, pratik ve araştırma odaklı yapmış olduğu çalışmalarla ve araştırmalarla sektöre öncülük etmektedir.</p>
+    </div>
+    </div>
+    </section>
+    <section class="section" id="section2">
+        <div class="container">
+            <div class="SectionMainWrap">
+      <h1>Section 2</h1>
+    </div>
+</div>
+    </section>
+    <section class="section" id="section3">
+        <div class="container">
+            <div class="SectionMainWrap">
+      <h1>Section 3</h1>
+      </div>
+    </div>
+    </section>
+    <section class="section" id="section4 counter-section">
+        <div class="container">
+          
+            <div class="row SectionMainWrap">
+                <div class="col-md-4">
+                <div class="CartArea">
+                    <div class="IconDiv">
+                        <img src="" alt="" srcset="">
+                    </div>
+                    <div class="Text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eos, reiciendis esse ea fugit doloremque nesciunt aperiam omnis, sit dolorem, explicabo eaque nisi officia libero modi molestiae placeat tempore inventore?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="CartArea">
+                    <div class="IconDiv">
+                        <img src="" alt="" srcset="">
+                    </div>
+                    <div class="Text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eos, reiciendis esse ea fugit doloremque nesciunt aperiam omnis, sit dolorem, explicabo eaque nisi officia libero modi molestiae placeat tempore inventore?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="CartArea">
+                    <div class="IconDiv">
+                        <img src="" alt="" srcset="">
+                    </div>
+                    <div class="Text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eos, reiciendis esse ea fugit doloremque nesciunt aperiam omnis, sit dolorem, explicabo eaque nisi officia libero modi molestiae placeat tempore inventore?</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        
+    </div>
+    </section>
+    <section class="section" id="section5">
+        <div class="container-fluid pad0">
+            <div class="SectionMainWrap">
+                <div class="Logo">
+                    <img class="img-fluid" src="/assets/images/dna-logo.png" srcset="">
+                </div>
+                <div class="FooterTopText">
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim totam nesciunt voluptate praesentium neque sed iste adipisci aut, veritatis ab sunt perspiciatis numquam. Dolor, dolorem ut sunt temporibus accusamus saepe.</p>
+                </div>
+      </div>
+    </div>
+    </section>
+    <!-- Sectionlar -->
+  </div>
 
 
 
@@ -71,5 +156,19 @@
   </script>
 
   <script src="assets/js/particle.js"></script>
+  <script>
+    document.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('.section');
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      sections.forEach((section, index) => {
+        const offsetTop = section.offsetTop;
+        if (scrollTop >= offsetTop && scrollTop < offsetTop + section.offsetHeight) {
+          section.classList.add('active');
+        } else {
+          section.classList.remove('active');
+        }
+      });
+  </script>
+
 </body>
 </html>

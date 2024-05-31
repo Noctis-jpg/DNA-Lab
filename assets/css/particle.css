@@ -1,17 +1,120 @@
-* {
-    margin:0;
-    padding:0;
-  } 
-  
-  canvas {
-    display: block;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: "Roboto", sans-serif;
   }
-  
-  #container {
-    width: 100vw;
-    height: 100vh;
-    position: fixed; /* Not moved by scroll */
+  .pad0{
+    padding: 0;
+  }
+  #container_ym_sy {
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Arka plana alır */
   }
+  
+  .sections {
+    position: relative;
+    z-index: 1; /* Canvas'ın önüne getirir */
+  }
+  
+  .section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out;
+    color: white;
+  }
+  
+  .section.active {
+    opacity: 1;
+  }
+  
+  .section:not(.active) {
+    opacity: 0.5;
+  }
+  
+.sections #section1 .SectionMainWrap{
+    width: 60%;
+    z-index: 9;
+}
+.sections #section1 .SectionMainWrap H1{
+    font-weight: 300;
+    font-size: 50px;
+}
+.sections #section1 .SectionMainWrap p{
+    color: rgb(199, 199, 199);
+    font-size: 16px;
+    line-height: 2;
+}
+header {
+    position: relative;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+  }
+  header .Logo {
+    position: relative;
+    z-index: 9999;
+  }
+  header .Logo img {
+    width: 70%;
+  }
+  header .Logo::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    width: 5%;
+    background-color: white;
+    height: 3px;
+    left: 15px;
+    animation: moveRightLeft 1s 6 ease-out;
+  }
+  @keyframes moveRightLeft {
+    0%, 100% {
+      left: 15px;
+    }
+    50% {
+      left: 60%;
+    }
+  }
+
+ .CartArea{
+    z-index: 0;
+    box-shadow: 0px 0px 9px -5px rgb(125 109 109 / 50%);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    color: #FCFCFC;
+    padding: 2rem;
+    border: 1px solid #123c70;
+    border-radius: 5px;
+}
+.CartArea .Text p{
+    text-align: justify;
+    color: white;
+}
+#section5{
+    justify-content: end;
+    align-items: end;
+}
+#section5 .SectionMainWrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color:transparent;
+    padding: 3rem;    
+}
+#section5 .SectionMainWrap .Logo{
+    display: flex;
+    justify-content: center;
+}
+#section5 .SectionMainWrap .Logo img{
+    width: 20%
+}

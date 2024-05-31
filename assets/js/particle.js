@@ -24,12 +24,16 @@ class Sketch {
       this.time = 0;
   
       this.dracoLoader = new THREE.DRACOLoader();
-      this.dracoLoader.setDecoderPath('/draco/');
+      // this.dracoLoader.setDecoderPath('/draco/');
+      this.dracoLoader.setDecoderPath('/dna-lab/draco/');
+
       this.loader = new THREE.GLTFLoader();
       this.loader.setDRACOLoader(this.dracoLoader);
       
       this.loader.load(
-          '/assets/model/dna.gltf',
+          // '/assets/model/dna.gltf',
+          '/dna-lab/assets/model/dna.gltf',
+
           (gltf) => {
               console.log(gltf.scene.children[0].geometry);
               this.geometry = gltf.scene.children[0].geometry;
@@ -137,6 +141,6 @@ class Sketch {
   }
   
   new Sketch({
-    dom: document.getElementById("container")
+    dom: document.getElementById("container_ym_sy")
   });
   
