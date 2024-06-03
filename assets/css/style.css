@@ -7,6 +7,45 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.bgArea {
+  background-image: url(../images/section_bg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.breadcrumb {
+  list-style: none;
+  display: flex;
+}
+
+.breadcrumb li {
+  margin: 0 5px;
+}
+
+.breadcrumb li a {
+  text-decoration: none;
+  color: #3573bf;
+  font-weight: 600;
+}
+
+.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb li::after {
+  content: "/";
+  margin-left: 5px;
+}
+
+.breadcrumb li:last-child::after {
+  content: "";
+}
+
+.breadcrumb li {
+  color: white;
+  font-weight: 400;
+}
+
 body p {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -29,6 +68,14 @@ body p {
 }
 
 .Hero {
+  display: none;
+}
+
+.loaded .AboutArea {
+  display: block;
+}
+
+.AboutArea {
   display: none;
 }
 @keyframes spin {
@@ -102,6 +149,10 @@ header {
   position: fixed;
   width: 100%;
   z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 0.5rem 0;
 }
 header .Logo {
   position: relative;
@@ -117,12 +168,12 @@ header .Logo::after {
   width: 5%;
   background-color: white;
   height: 3px;
-  left: 15px;
+  left: 45px;
   animation: moveRightLeft 1s 6 ease-out;
 }
 @keyframes moveRightLeft {
   0%, 100% {
-    left: 15px;
+    left: 45px;
   }
   50% {
     left: 60%;
@@ -156,7 +207,7 @@ header .Logo::after {
 }
 .ServicesHero .VideoArea video {
   width: 100%;
-  height: 100vh;
+  height: 75vh;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -201,6 +252,7 @@ header .Logo::after {
 .DetailPage .BigText h2 {
   font-size: 50px;
   font-weight: 400;
+  text-align: center;
 }
 .DetailPage .LittleText {
   display: flex;
@@ -213,6 +265,7 @@ header .Logo::after {
   font-weight: 400;
   width: 60%;
   color: #666;
+  text-align: center;
 }
 
 .SlideDown {
@@ -226,6 +279,7 @@ header .Logo::after {
 .SlideDown .BigText h2 {
   font-size: 50px;
   font-weight: 400;
+  text-align: center;
 }
 .SlideDown .LittleText {
   display: flex;
@@ -236,6 +290,7 @@ header .Logo::after {
   font-size: 25px;
   font-weight: 400;
   width: 50%;
+  text-align: center;
 }
 
 .ThreeSection {
@@ -252,6 +307,10 @@ header .Logo::after {
   top: 0;
   left: 0;
 }
+.ThreeSection .AboutArea {
+  display: flex;
+  flex-direction: column;
+}
 .ThreeSection .AboutArea h3 {
   color: rgba(255, 255, 255, 0.6509803922);
   padding-bottom: 1rem;
@@ -267,8 +326,8 @@ header .Logo::after {
   height: 1px;
   background-color: #ffffff;
   position: absolute;
-  top: 30%;
-  left: 110%;
+  top: 25%;
+  left: 130px;
   transform: translateY(-50%);
 }
 .ThreeSection .AboutArea p {
@@ -276,7 +335,7 @@ header .Logo::after {
   line-height: 1.6;
   text-align: justify;
   width: 80%;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 300;
 }
 .ThreeSection .T-hHeading h3 {
@@ -285,7 +344,7 @@ header .Logo::after {
   position: relative;
   display: inline-block;
   font-weight: 400;
-  font-size: 23px;
+  font-size: 20px;
 }
 .ThreeSection .T-hHeading h3::after {
   content: "";
@@ -294,7 +353,7 @@ header .Logo::after {
   height: 1px;
   background-color: #ffffff;
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 110%;
   transform: translateY(-50%);
 }
@@ -464,6 +523,10 @@ header .Logo::after {
   background: #ffffff;
 }
 
+.ServicesAreaSwiper {
+  margin: 3rem 0;
+}
+
 .InfoSection {
   display: flex;
   justify-content: center;
@@ -530,17 +593,14 @@ header .Logo::after {
 .InfoSection .content .contact-button i {
   margin-right: 0.5rem;
 }
-.InfoSection .content .contact-button:hover {
-  background-color: #0056b3;
-}
 .InfoSection .video {
   position: relative;
-  width: 600px;
-  height: 700px;
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 10px;
+}
+.InfoSection .video video {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 .InfoSection .video img {
   width: 100%;
@@ -568,7 +628,7 @@ header .Logo::after {
 }
 
 footer .bg-overlay {
-  background: url("https://placehold.co/1920x1080") no-repeat center center/cover;
+  background: url("../images/footer_bg.png") no-repeat center center/cover;
   position: relative;
   padding: 50px 80px;
   width: 100%;
@@ -671,7 +731,7 @@ footer .NextPagearea {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url("/mnt/data/Ekran Resmi 2024-05-30 16.41.45.png") no-repeat center center/cover;
+  background: url("../images/footer_object.png") no-repeat center center/contain;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -758,4 +818,58 @@ footer .about-link {
 }
 .dna-section .TopImg img {
   transform: translateY(-50px);
+}
+
+.Annotation {
+  margin-top: 2rem;
+  padding: 2rem;
+  position: relative;
+  background-color: #f5f5f5;
+}
+.Annotation .Text_Head {
+  width: 90%;
+}
+.Annotation .Text_Head p {
+  text-align: justify;
+}
+.Annotation .BgDiffListArea {
+  padding: 1rem 10px;
+  box-shadow: 0px 0px 34px 8px rgba(158, 158, 158, 0.1);
+}
+.Annotation .BgDiffListArea .ListTitle {
+  font-weight: 600;
+}
+.Annotation .BgDiffListArea ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 1rem 0;
+}
+.Annotation .BgDiffListArea ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+  margin: 5px 0;
+}
+.Annotation .BgDiffListArea ul li img {
+  width: 15%;
+}
+
+.corporateSpace {
+  margin-top: 2rem;
+  padding: 3rem;
+  position: relative;
+  background-color: #f5f5f5;
+}
+.corporateSpace .CorparateHead h3 {
+  font-size: 30px;
+}
+.corporateSpace .MainCorporateSpace {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.corporateSpace .MainCorporateSpace .HeadImg img {
+  width: 15%;
 }/*# sourceMappingURL=style.css.map */
