@@ -1,0 +1,508 @@
+@media screen and (max-width:991px) {
+    .Hero{
+        .VideoArea{
+            video{
+                width: 100%;
+                height: 80vh;
+                object-fit: cover;
+            }
+            .TextArea{
+                position: absolute;
+                z-index: 99;
+                bottom: 25%;
+                width: 90%;
+                left: 10%;
+    
+                h1{
+                    font-size: 35px;
+                    color: white;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    .SlideDown{
+        padding: 2rem 0;
+        .BigText{
+    
+            h2{
+                font-size: 30px;
+                text-align: justify;
+            }
+        }
+        .LittleText{
+
+        margin-top: 2rem;
+            h4{
+                font-size: 23px;
+                width: 100%;
+                text-align: justify;
+            }
+        }
+    }
+
+    .ThreeSection {
+        background-color: #0b203a;
+        position: relative;
+        width: 100%;
+        padding: 2rem;
+        overflow: hidden;
+    
+        #particleCanvas {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    
+        .AboutArea {
+            display: flex;
+            flex-direction: column;
+            h3 {
+                color: #ffffffa6;
+                padding-bottom: 1rem;
+                position: relative;
+                display: inline-block;
+                font-weight: 400;
+                font-size: 20px;
+                
+                &::after {
+                    content: "";
+                    left: 0; 
+                    top: 85%;
+
+                }
+            }
+    
+            p {
+                color: #ffffff;
+                line-height: 1.6;
+                text-align: justify;
+                width: 100%;
+                font-size: 22px;
+                font-weight: 300;
+            }
+        }
+    
+        .T-hHeading {
+            h3 {
+                color: rgba(255, 255, 255, 0.6509803922);
+                padding-bottom: 1rem;
+                position: relative;
+                display: inline-block;
+                font-weight: 400;
+                font-size: 20px;
+            
+    
+                &::after {
+                    left: 0; 
+                    top: 85%;
+                }
+            }
+    
+            ul {
+                list-style: none;
+                padding: 0;
+    
+                li {
+                    color: #ffffff;
+                    margin: 0.5rem 0;
+                    position: relative;
+                    padding-left: 20px;
+    
+                    &::before {
+                        content: "→";
+                        position: absolute;
+                        left: 0;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+
+    .MissionVisionSection {
+        background-color: #ffffff; /* Arka plan rengini beyaz yapalım */
+        padding: 1rem;
+        text-align: left;
+    
+        .container {
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0rem;
+    
+                h2 {
+                    font-size: 2.5rem;
+                    color: #000000;
+                    margin: 0;
+                }
+    
+                .mission-vision-button {
+                    display: inline-block;
+                    background-color: #0b203a;
+                    color: #ffffff;
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    position: relative;
+                    display: none;
+
+                    .arrow {
+                        margin-right: 0.5rem;
+                        position: relative;
+                        top: 2px;
+                    }
+                }
+            }
+        }
+    
+        h3 {
+            font-size: 2rem;
+            color: #000000;
+            margin-bottom: 1rem;
+        }
+    
+        p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            text-align: justify;
+            width: 80%;
+        }
+    
+        .MissionArea, .VisionArea {
+            margin: 2rem 0;
+        }
+    
+        .MissionArea h3 {
+            color: #0b203a;
+            font-size: 20px;
+        }
+    
+        .VisionArea h3 {
+            color: #0b203a;
+            font-size: 20px;
+        }
+    }
+    .InfoSection {
+        padding: 2rem 0;
+        background-color: #f4f4f4;
+    
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+    
+        .content {
+            margin: 2rem 0;
+            h1 {
+                font-size:30px;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+    
+            p {
+                font-size: 1rem;
+                color: #666;
+                margin-bottom: 2rem;
+            }
+    
+            .stats {
+                display: flex;
+                gap: 2rem;
+                margin-bottom: 2rem;
+    
+                .stat-item {
+
+                    flex-direction: column;
+                    i {
+                        font-size: 2rem;
+                        color: #007bff;
+                        margin-right: 0rem;
+                    }
+    
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin: .5rem 0;
+                        span {
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                        }
+    
+                        p {
+                            margin: 0;
+                            font-size: 1rem;
+                            color: #666;
+                        }
+                    }
+                }
+            }
+    
+            .contact-button {
+                display: inline-block;
+                background-color: rgb(11, 32, 58);
+                color: rgb(255, 255, 255);
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: bold;
+    
+                i {
+                    margin-right: .5rem;
+                }
+    
+     
+            }
+        }
+    
+        .video {
+            position: relative;
+            border-radius: 10px;
+            video{
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+    
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+    
+            .play-button {
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+    
+                i {
+                    font-size: 2rem;
+                    color: #fff;
+                }
+    
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.7);
+                }
+            }
+        }
+    }   
+    footer {
+        .bg-overlay {
+            padding: 50px 35px;
+        }
+        .list-inline{
+            left: 0;
+        }
+        .list-inline-item a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+    
+        .list-inline-item a:hover {
+            color: #007bff;
+        }
+    
+        h5 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+    
+        p {
+            color: white;
+            font-size: 1rem;
+            margin: 0.25rem 0;
+        }
+    
+        .btn {
+            font-size: 1.2rem;
+        }
+    
+        .logo {
+            left: -40px;
+            position: relative;
+        }
+    
+        .list-unstyled li {
+            margin-bottom: 0.5rem;
+        }
+    
+        .list-unstyled a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+    
+        .list-unstyled a:hover {
+            color: #007bff;
+        }
+        .z-Ind{
+            z-index: 9;
+        }
+        .pad-5{
+            position: relative;
+        }
+    .CopyRightArea{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 0;
+        position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            left: calc(-80px); /* Sol taraftan 80 piksel sola */
+            width: calc(100% + 160px); /* Orijinal genişliğe her iki taraftan 80 piksel ekle */
+            height: 1px;
+            background-color: #979595;
+            top: 10px;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            left: calc(-80px); /* Sol taraftan 80 piksel sola */
+            width: calc(100% + 160px); /* Orijinal genişliğe her iki taraftan 80 piksel ekle */
+            height: 1px;
+            background-color: #979595;
+            bottom: 10px;
+        }
+        .col-md-6{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            span{
+                color: white;
+                font-size: 13px;
+                z-index: 9;
+            }
+        }
+    }
+    @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(3%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    .NextPagearea {
+        position: relative;
+        width: 100%;
+    }
+    
+    .content {
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+    
+        &:hover {
+            transform: scale(1.1);
+    
+            .circle {
+                background-color: rgba(255, 255, 255, 1);
+    
+                span {
+                    color: #007BFF; // Hover rengini istediğin gibi ayarlayabilirsin
+                }
+            }
+    
+            .about-link {
+                color: #007BFF; // Hover rengini istediğin gibi ayarlayabilirsin
+            }
+        }
+    }
+    
+    .circle {
+        width: 100px;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        transition: background-color 0.3s ease;
+    
+        span {
+            font-size: 40px;
+            color: #000;
+            transition: color 0.3s ease;
+        }
+    }
+    
+    .about-link {
+        font-size: 40px;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    }
+
+    .DetailPage{
+        padding: 3rem 0;
+        position: relative;
+        z-index: 99;
+        background-image: url(../images/section_bg.png);
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        background-size: contain;
+        background-position: center;
+        overflow-x: hidden;
+        transition: background-image 0.5s ease-in-out;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        .BigText{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            h2{
+                font-size: 30px;
+            }
+        }
+        .LittleText{
+            display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        text-align: center;
+            p{
+                font-size: 18px;
+                font-weight: 400;
+                width: 90%;
+                color: #666;
+                text-align: center;
+    
+            }
+        }
+    }
+    
+    .dna-section {
+        padding: 50px 25px;
+    }
+    .corporateSpace{
+        padding: 3rem 25px;
+    }   
+}

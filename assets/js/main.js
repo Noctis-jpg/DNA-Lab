@@ -85,12 +85,21 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
     animate();
 
-    window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        particlesArray.length = 0; 
-        init(); 
-    });
+    // window.addEventListener('resize', () => {
+    //     canvas.width = window.innerWidth;
+    //     canvas.height = window.innerHeight;
+    //     particlesArray.length = 0; 
+    //     init(); 
+    // });
+    const areaWidthHeight = document.getElementsByClassName('ThreeSection')[0];
+
+window.addEventListener('resize', () => {
+    const canvas = document.querySelector('canvas');
+    canvas.width = areaWidthHeight.offsetWidth;
+    canvas.height = areaWidthHeight.offsetHeight;
+    particlesArray.length = 0; 
+    init(); 
+});
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -109,6 +118,24 @@ document.addEventListener('DOMContentLoaded', function () {
             el: '.swiper-pagination',
             clickable: true,
         },
+        breakpoints: {
+            0: {
+                slidesPerView: 2,
+                spaceBetween: 5,
+              },
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 5,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 5,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 5,
+            },
+          },
     });
 
     const slides = document.querySelectorAll('.swiper-slide');
@@ -129,3 +156,54 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+// let Bg = gsap.timeline({
+//     scrollTrigger: {
+//         trigger: ".ThreeSection",
+//         start:"top center",
+//         end: "bottom center",
+//         scrub: 1,
+//         markers: false,
+//         onEnter: () => {
+//             gsap.to(".ThreeSection", {
+//                 backgroundColor:"#0b203a",
+//                 duration:1,
+//                 ease:"power1.inOut"
+//             });
+//         },
+//     }
+// })
+
+
+let Fx = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".pinned",
+        start:"top center",
+        end: "bottom center",
+        scrub: 1,
+        markers:false,
+        onEnterBack: () => {
+            gsap.to(".pinned", {
+                transform: "translate(0%,0%)",
+                duration: 1,
+                ease: "power1.inOut",
+            });
+        },
+        onLeave: () => {
+            gsap.to (".pinned", {
+                transform: "translate(0%,-100%)",
+                duration:1,
+                ease:"power1.inOut"
+            });
+            gsap.to (".DetailPage", {
+                width:"100%",
+                duration:1,
+                ease:"power1.inOut",
+            });
+        }
+
+    }
+})
+
+

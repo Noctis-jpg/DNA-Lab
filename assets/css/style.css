@@ -7,6 +7,12 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.text_button {
+  color: #3573bf;
+  font-size: 15px;
+  font-weight: 500;
+}
+
 .bgArea {
   background-image: url(../images/section_bg.png);
   background-repeat: no-repeat;
@@ -243,6 +249,19 @@ header .Logo::after {
 
 .DetailPage {
   padding: 3rem 0;
+  position: relative;
+  z-index: 99;
+  background-image: url(../images/section_bg.png);
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-size: contain;
+  background-position: center;
+  overflow-x: hidden;
+  transition: background-image 0.5s ease-in-out;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
 }
 .DetailPage .BigText {
   display: flex;
@@ -284,13 +303,14 @@ header .Logo::after {
 .SlideDown .LittleText {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 .SlideDown .LittleText h4 {
   font-size: 25px;
-  font-weight: 400;
+  font-weight: 300;
   width: 50%;
   text-align: center;
+  color: rgb(75, 75, 75);
 }
 
 .ThreeSection {
@@ -480,9 +500,11 @@ header .Logo::after {
 }
 .SwiperSection .swiper-container .swiper-slide .content p {
   margin: 0;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
 }
 .SwiperSection .swiper-container .swiper-slide:hover {
-  transform: translateY(-10px);
   z-index: 10;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   opacity: 1;
@@ -561,6 +583,9 @@ header .Logo::after {
 .InfoSection .content .stats .stat-item {
   display: flex;
   align-items: center;
+  border: 3px dashed #d2daee;
+  padding: 20px 10px;
+  border-radius: 5px;
 }
 .InfoSection .content .stats .stat-item i {
   font-size: 2rem;
@@ -627,6 +652,10 @@ header .Logo::after {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+footer .list-inline {
+  position: relative;
+  left: 40px;
+}
 footer .bg-overlay {
   background: url("../images/footer_bg.png") no-repeat center center/cover;
   position: relative;
@@ -665,7 +694,7 @@ footer h5 {
   margin-bottom: 0.5rem;
 }
 footer p {
-  color: white;
+  color: #b6b6b6;
   font-size: 1rem;
   margin: 0.25rem 0;
 }
@@ -673,20 +702,21 @@ footer .btn {
   font-size: 1.2rem;
 }
 footer .logo {
-  width: 100px;
+  width: 300px;
 }
 footer .list-unstyled li {
   margin-bottom: 0.5rem;
 }
 footer .list-unstyled a {
-  color: #fff;
+  color: #b6b6b6;
   text-decoration: none;
   transition: color 0.3s;
 }
 footer .list-unstyled a:hover {
-  color: #007bff;
+  color: #3573bf;
 }
 footer .z-Ind {
+  height: 15rem;
   z-index: 9;
 }
 footer .pad-5 {
@@ -727,14 +757,26 @@ footer .CopyRightArea .col-md-6 span {
   font-size: 13px;
   z-index: 9;
 }
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 footer .NextPagearea {
   position: relative;
-  width: 100%;
+  width: 32%;
   height: 100vh;
   background: url("../images/footer_object.png") no-repeat center center/contain;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: slide 5s infinite ease-in-out;
 }
 footer .content {
   text-align: center;
@@ -752,7 +794,9 @@ footer .content:hover .circle span {
   color: #007BFF;
 }
 footer .content:hover .about-link {
-  color: #007BFF;
+  color: white;
+  font-size: 50px;
+  font-weight: 600;
 }
 footer .circle {
   width: 100px;
