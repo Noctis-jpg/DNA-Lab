@@ -158,24 +158,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// let Bg = gsap.timeline({
-//     scrollTrigger: {
-//         trigger: ".ThreeSection",
-//         start:"top center",
-//         end: "bottom center",
-//         scrub: 1,
-//         markers: false,
-//         onEnter: () => {
-//             gsap.to(".ThreeSection", {
-//                 backgroundColor:"#0b203a",
-//                 duration:1,
-//                 ease:"power1.inOut"
-//             });
-//         },
-//     }
-// })
-
-
 let Fx = gsap.timeline({
     scrollTrigger: {
         trigger: ".pinned",
@@ -206,4 +188,50 @@ let Fx = gsap.timeline({
     }
 })
 
-
+document.addEventListener("DOMContentLoaded", function() {
+    const header = document.getElementById('header');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const popupMenu = document.getElementById('popupMenu');
+    const closeBtn = document.querySelector('.close-btn');
+  
+    function openMenu() {
+      gsap.timeline()
+        .to(popupMenu, { width: '100%', height: '100%', opacity: 1, duration: 0.5 })
+        .to(popupMenu.querySelector('.popup-left'), { opacity: 1, duration: 0.5 }, "-=0.25")
+        .to(popupMenu.querySelector('.popup-right'), { opacity: 1, duration: 0.5 }, "-=0.25");
+    }
+  
+    function closeMenu() {
+      gsap.timeline()
+        .to(popupMenu.querySelector('.popup-left'), { opacity: 0, duration: 0.25 })
+        .to(popupMenu.querySelector('.popup-right'), { opacity: 0, duration: 0.25 }, "-=0.25")
+        .to(popupMenu, { width: '0', height: '0', opacity: 0, duration: 0.5 });
+    }
+  
+    menuToggle.addEventListener('click', function() {
+      this.classList.toggle('active');
+      if (this.classList.contains('active')) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    });
+  
+    closeBtn.addEventListener('click', function() {
+      closeMenu();
+      menuToggle.classList.remove('active');
+    });
+  
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) { // Ayarlamak için mesafeyi değiştirin
+        gsap.to(header, { backgroundColor: "#003e89", duration: 0.5 });
+        header.classList.add('header-white');
+        header.classList.remove('header-video');
+      } else {
+        gsap.to(header, { backgroundColor: "rgba(255, 255, 255, .2)", duration: 0.5 });
+        header.classList.add('header-video');
+        header.classList.remove('header-white');
+      }
+    });
+  });
+  

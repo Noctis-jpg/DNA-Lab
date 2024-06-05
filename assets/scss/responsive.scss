@@ -1,4 +1,8 @@
 @media screen and (max-width:991px) {
+    .MobileHidden{
+        display: none !important;
+        visibility: hidden !important;
+    }
     .Hero{
         .VideoArea{
             video{

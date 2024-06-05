@@ -7,6 +7,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.justify-content-space-evenly {
+  justify-content: space-evenly !important;
+}
+
 .text_button {
   color: #3573bf;
   font-size: 15px;
@@ -84,12 +88,41 @@ body p {
 .AboutArea {
   display: none;
 }
-@keyframes spin {
-  0% { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
-    transform: rotate(0deg); /* Firefox 16+, IE 10+, Opera */
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */
   }
-  100% { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
-    transform: rotate(360deg); /* Firefox 16+, IE 10+, Opera */
+  100% {
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */
   }
 }
 #loader-wrapper .loader-section {
@@ -98,33 +131,60 @@ body p {
   width: 51%;
   height: 100%;
   background: black;
-  z-index: 99; /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
-  transform: translateX(0); /* Firefox 16+, IE 10+, Opera */
+  z-index: 99;
+  -webkit-transform: translateX(0);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(0);
+  /* IE 9 */
+  transform: translateX(0);
+  /* Firefox 16+, IE 10+, Opera */
 }
 
-#loader-wrapper .loader-section.section-left, #loader-wrapper .loader-section.section-top {
+#loader-wrapper .loader-section.section-left,
+#loader-wrapper .loader-section.section-top {
   left: 0;
 }
 
-#loader-wrapper .loader-section.section-right, #loader-wrapper .loader-section.section-bottom {
+#loader-wrapper .loader-section.section-right,
+#loader-wrapper .loader-section.section-bottom {
   right: 0;
 }
 
 /* Loaded */
-.loaded #loader-wrapper .loader-section.section-up { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
-  transform: translateY(-100%); /* Firefox 16+, IE 10+, Opera */
+.loaded #loader-wrapper .loader-section.section-up {
+  -webkit-transform: translateY(-100%);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateY(-100%);
+  /* IE 9 */
+  transform: translateY(-100%);
+  /* Firefox 16+, IE 10+, Opera */
 }
 
-.loaded #loader-wrapper .loader-section.section-bottom { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
-  transform: translateY(100%); /* Firefox 16+, IE 10+, Opera */
+.loaded #loader-wrapper .loader-section.section-bottom {
+  -webkit-transform: translateY(100%);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateY(100%);
+  /* IE 9 */
+  transform: translateY(100%);
+  /* Firefox 16+, IE 10+, Opera */
 }
 
-.loaded #loader-wrapper .loader-section.section-left { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
-  transform: translateX(-100%); /* Firefox 16+, IE 10+, Opera */
+.loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(-100%);
+  /* IE 9 */
+  transform: translateX(-100%);
+  /* Firefox 16+, IE 10+, Opera */
 }
 
-.loaded #loader-wrapper .loader-section.section-right { /* Chrome, Opera 15+, Safari 3.1+ */ /* IE 9 */
-  transform: translateX(100%); /* Firefox 16+, IE 10+, Opera */
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(100%);
+  /* IE 9 */
+  transform: translateX(100%);
+  /* Firefox 16+, IE 10+, Opera */
 }
 
 .loaded {
@@ -133,11 +193,13 @@ body p {
 
 .loaded #loader {
   opacity: 0;
+  -webkit-transition: all 0.8s ease-out;
   transition: all 0.8s ease-out;
 }
 
 .loaded #loader-wrapper {
   visibility: hidden;
+  -webkit-transition: all 0.3s 3s ease-out;
   transition: all 0.3s 3s ease-out;
 }
 
@@ -145,19 +207,19 @@ body p {
 .loaded #loader-wrapper .loader-section.section-bottom,
 .loaded #loader-wrapper .loader-section.section-right,
 .loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transition: all 2.7s 0.3s cubic-bezier(0.39, 1.05, 0.64, -0.04);
   transition: all 2.7s 0.3s cubic-bezier(0.39, 1.05, 0.64, -0.04);
 }
 
 /*END OF LOADER ======================================*/
 header {
   position: relative;
-  height: 100px;
+  height: 130px;
   position: fixed;
   width: 100%;
   z-index: 9999;
   background-color: rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   padding: 0.5rem 0;
 }
 header .Logo {
@@ -185,6 +247,162 @@ header .Logo::after {
     left: 60%;
   }
 }
+header nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header nav ul li {
+  margin: 0 15px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+  font-size: 18px;
+}
+header .header-video nav ul li a {
+  color: #fff;
+}
+header .header-white nav ul li a {
+  color: #000;
+}
+header .btn {
+  margin-left: 15px;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+header .header-white .btn {
+  border-color: #000;
+  color: #000;
+}
+header .menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  position: relative;
+  z-index: 10000;
+}
+header .menu-toggle .hamburger {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  position: relative;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+header .menu-toggle .hamburger::before, header .menu-toggle .hamburger::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+header .menu-toggle .hamburger::before {
+  top: -10px;
+}
+header .menu-toggle .hamburger::after {
+  bottom: -10px;
+}
+header .menu-toggle.active .hamburger {
+  background: transparent;
+}
+header .menu-toggle.active .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+header .menu-toggle.active .hamburger::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.popup-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #003e89;
+  color: #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9998;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.popup-menu .borderType_ym {
+  border-left: 5px solid #a4a4a4;
+}
+.popup-menu .absoClass_ym {
+  height: 90%;
+  position: absolute;
+  bottom: 0;
+  border-top: 5px solid #a4a4a4;
+}
+.popup-menu .absoClass_ym .row {
+  height: 100%;
+}
+.popup-menu .popup-left,
+.popup-menu .popup-right {
+  width: 50%;
+  opacity: 0;
+}
+.popup-menu .popup-left ul {
+  list-style: none;
+  padding: 0;
+}
+.popup-menu .popup-left ul li {
+  margin: 30px 0;
+}
+.popup-menu .popup-left ul li a {
+  text-decoration: none;
+  color: #a4a4a4;
+  font-size: 45px;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+.popup-menu .popup-left ul li:hover a {
+  color: #fff;
+}
+.popup-menu .popup-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+.popup-menu .popup-right .close-btn {
+  font-size: 30px;
+  cursor: pointer;
+}
+.popup-menu .popup-right a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  margin-top: 20px;
+}
+.popup-menu .popup-right .DemoPop {
+  font-size: 60px;
+  border-bottom: 1px solid #fff;
+  color: #f5f5f5;
+}
+.popup-menu .popup-right .DemoPop i {
+  font-size: 40px;
+}
+.popup-menu .CpyPop {
+  margin-top: 2rem;
+  color: #fff;
+  font-size: 14px;
+}
 
 .Hero .VideoArea {
   position: relative;
@@ -192,8 +410,7 @@ header .Logo::after {
 .Hero .VideoArea video {
   width: 100%;
   height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .Hero .VideoArea .TextArea {
   position: absolute;
@@ -214,8 +431,7 @@ header .Logo::after {
 .ServicesHero .VideoArea video {
   width: 100%;
   height: 75vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .ServicesHero .VideoArea .TextArea {
   position: absolute;
@@ -395,7 +611,8 @@ header .Logo::after {
 }
 
 .MissionVisionSection {
-  background-color: #ffffff; /* Arka plan rengini beyaz yapalım */
+  background-color: #ffffff;
+  /* Arka plan rengini beyaz yapalım */
   padding: 2rem;
   text-align: left;
 }
@@ -438,7 +655,8 @@ header .Logo::after {
   text-align: justify;
   width: 80%;
 }
-.MissionVisionSection .MissionArea, .MissionVisionSection .VisionArea {
+.MissionVisionSection .MissionArea,
+.MissionVisionSection .VisionArea {
   margin: 2rem 0;
 }
 .MissionVisionSection .MissionArea h3 {
@@ -512,10 +730,12 @@ header .Logo::after {
 .SwiperSection .swiper-container .swiper-slide:not(:hover) {
   opacity: 0.7;
 }
-.SwiperSection .swiper-container .swiper-button-next, .SwiperSection .swiper-container .swiper-button-prev {
+.SwiperSection .swiper-container .swiper-button-next,
+.SwiperSection .swiper-container .swiper-button-prev {
   color: #ffffff;
 }
-.SwiperSection .swiper-container .swiper-button-next, .SwiperSection .swiper-container .swiper-button-prev {
+.SwiperSection .swiper-container .swiper-button-next,
+.SwiperSection .swiper-container .swiper-button-prev {
   color: #ffffff;
   width: 50px;
   height: 50px;
@@ -526,10 +746,12 @@ header .Logo::after {
   align-items: center;
   transition: background-color 0.3s;
 }
-.SwiperSection .swiper-container .swiper-button-next:hover, .SwiperSection .swiper-container .swiper-button-prev:hover {
+.SwiperSection .swiper-container .swiper-button-next:hover,
+.SwiperSection .swiper-container .swiper-button-prev:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
-.SwiperSection .swiper-container .swiper-button-next::after, .SwiperSection .swiper-container .swiper-button-prev::after {
+.SwiperSection .swiper-container .swiper-button-next::after,
+.SwiperSection .swiper-container .swiper-button-prev::after {
   font-size: 20px;
 }
 .SwiperSection .swiper-container .swiper-button-next {
@@ -630,8 +852,7 @@ header .Logo::after {
 .InfoSection .video img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .InfoSection .video .play-button {
   position: absolute;
@@ -694,7 +915,7 @@ footer h5 {
   margin-bottom: 0.5rem;
 }
 footer p {
-  color: #b6b6b6;
+  color: #a4a4a4;
   font-size: 1rem;
   margin: 0.25rem 0;
 }
@@ -708,7 +929,7 @@ footer .list-unstyled li {
   margin-bottom: 0.5rem;
 }
 footer .list-unstyled a {
-  color: #b6b6b6;
+  color: #a4a4a4;
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -732,8 +953,10 @@ footer .CopyRightArea {
 footer .CopyRightArea::after {
   content: "";
   position: absolute;
-  left: -80px; /* Sol taraftan 80 piksel sola */
-  width: calc(100% + 160px); /* Orijinal genişliğe her iki taraftan 80 piksel ekle */
+  left: -80px;
+  /* Sol taraftan 80 piksel sola */
+  width: calc(100% + 160px);
+  /* Orijinal genişliğe her iki taraftan 80 piksel ekle */
   height: 1px;
   background-color: #979595;
   top: 10px;
@@ -741,8 +964,10 @@ footer .CopyRightArea::after {
 footer .CopyRightArea::before {
   content: "";
   position: absolute;
-  left: -80px; /* Sol taraftan 80 piksel sola */
-  width: calc(100% + 160px); /* Orijinal genişliğe her iki taraftan 80 piksel ekle */
+  left: -80px;
+  /* Sol taraftan 80 piksel sola */
+  width: calc(100% + 160px);
+  /* Orijinal genişliğe her iki taraftan 80 piksel ekle */
   height: 1px;
   background-color: #979595;
   bottom: 10px;
@@ -878,6 +1103,8 @@ footer .about-link {
 }
 .Annotation .BgDiffListArea {
   padding: 1rem 10px;
+  -webkit-box-shadow: 0px 0px 34px 8px rgba(158, 158, 158, 0.1);
+  -moz-box-shadow: 0px 0px 34px 8px rgba(158, 158, 158, 0.1);
   box-shadow: 0px 0px 34px 8px rgba(158, 158, 158, 0.1);
 }
 .Annotation .BgDiffListArea .ListTitle {
