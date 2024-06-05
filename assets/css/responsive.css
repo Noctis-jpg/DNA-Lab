@@ -1,5 +1,135 @@
 @charset "UTF-8";
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  header {
+    height: 100px;
+    padding: 15px 0;
+  }
+  header .Logo img {
+    width: 175px;
+    height: 55px;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+  header {
+    height: 100px;
+    padding: 15px 0;
+  }
+  header .Logo img {
+    width: 255px;
+    height: 70px;
+  }
+}
+@media screen and (min-width: 1605px) and (max-width: 2000px) {
+  header {
+    height: 120px;
+    padding: 15px 0;
+  }
+  header .Logo img {
+    width: 270px;
+    height: 80px;
+  }
+}
 @media screen and (max-width: 991px) {
+  header {
+    height: 90px;
+    padding: 15px 0;
+    position: relative;
+    background-color: #003e89;
+  }
+  header .Logo img {
+    width: 250px;
+    height: 60px;
+  }
+  .popup-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: #003e89;
+    color: #000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9998;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  .popup-menu .borderType_ym {
+    border-left: 5px solid #a4a4a4;
+  }
+  .popup-menu .absoClass_ym {
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    border-top: 5px solid #a4a4a4;
+  }
+  .popup-menu .absoClass_ym .justify-content-center {
+    justify-content: start !important;
+  }
+  .popup-menu .absoClass_ym .justify-content-space-evenly {
+    justify-content: start !important;
+  }
+  .popup-menu .absoClass_ym .align-items-center {
+    align-items: start !important;
+  }
+  .popup-menu .absoClass_ym .row {
+    height: 100%;
+  }
+  .popup-menu .popup-left,
+  .popup-menu .popup-right {
+    width: 50%;
+    opacity: 0;
+  }
+  .popup-menu .popup-left ul {
+    list-style: none;
+    padding: 0;
+  }
+  .popup-menu .popup-left ul li {
+    margin: 30px 0;
+  }
+  .popup-menu .popup-left ul li a {
+    text-decoration: none;
+    color: #a4a4a4;
+    font-size: 30px;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+  }
+  .popup-menu .popup-left ul li:hover a {
+    color: #fff;
+  }
+  .popup-menu .popup-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+  }
+  .popup-menu .popup-right .close-btn {
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .popup-menu .popup-right a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  .popup-menu .popup-right .DemoPop {
+    font-size: 30px;
+    border-bottom: 1px solid #fff;
+    color: #f5f5f5;
+  }
+  .popup-menu .popup-right .DemoPop i {
+    font-size: 20px;
+  }
+  .popup-menu .CpyPop {
+    margin-top: 2rem;
+    color: #fff;
+    font-size: 14px;
+  }
   .MobileHidden {
     display: none !important;
     visibility: hidden !important;

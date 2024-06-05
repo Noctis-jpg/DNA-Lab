@@ -239,7 +239,8 @@ header {
         z-index: 9999;
 
         img {
-            width: 70%;
+            width: 280px;
+            height: 90px;
         }
 
         &::after {
@@ -891,6 +892,7 @@ header {
 
 .ServicesAreaSwiper {
     margin: 3rem 0;
+    margin-bottom: 0;
 }
 
 
@@ -1350,4 +1352,72 @@ footer {
         }
 
     }
+}
+
+
+
+
+.cta-wrapper {
+    position: relative;
+    padding: 30px 0;
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.cta-section {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+}
+
+.cta-content {
+    width: 85%;
+    h1 {
+        font-size: 36px;
+        color: #333333;
+    }
+
+    p {
+        font-size: 18px;
+        color: #666666;
+    }
+}
+
+.custom-btn {
+    background-color: $thememainColor; 
+    border: none; 
+    color: white; 
+    padding: 15px 30px; 
+    font-size: 18px; 
+    font-weight: bold; 
+    display: inline-flex;
+    align-items: center; 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+  }
+  .custom-btn i {
+    margin-right: 10px;
+  }
+  
+  .custom-btn:hover {
+    background-color: #0056b3; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); 
+  }
+
+.geometric-shape {
+    position: absolute;
+    top: 0%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, rgb(0 62 137 / 50%) 0%, rgba(37, 117, 252, 0.46) 100%);
+    filter: blur(100px);
+    z-index: 99;
+}
 }

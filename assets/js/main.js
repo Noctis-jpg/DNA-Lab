@@ -235,3 +235,27 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   
+
+let shape = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".geometric-shape",
+        start:"top center",
+        end: "bottom center",
+        scrub: 1,
+        markers:false,
+        onEnter: () => {
+            gsap.to(".geometric-shape", {
+                transform: "translate(100%,0%)",
+                duration: 1,
+                ease: "power1.inOut",
+            });
+        },
+        onEnterBack: () => {
+            gsap.to(".geometric-shape", {
+                transform: "translate(0%,0%)",
+                duration: 1,
+                ease: "power1.inOut",
+            });
+        },
+    }
+});
