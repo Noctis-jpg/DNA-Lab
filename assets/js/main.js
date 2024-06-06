@@ -269,3 +269,66 @@ var swiper = new Swiper(".Certifates", {
       clickable: true,
     },
   });
+
+
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+
+  ScrollTrigger.create({
+    trigger: ".GsapFixSection",
+    start: "top top",
+    end: "bottom bottom",
+    onEnter: () => gsap.to(".sidebar", { display: "block", autoAlpha: 1 }),
+    onLeaveBack: () => gsap.to(".sidebar", { display: "none", autoAlpha: 0 }),
+    onLeave: () => gsap.to(".sidebar", { display: "none", autoAlpha: 0 }),
+    onEnterBack: () => gsap.to(".sidebar", { display: "block", autoAlpha: 1 }),
+    markers: true 
+  });
+  
+
+  gsap.utils.toArray('.section').forEach((section, i) => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top 100%",
+      end: "top 50%",
+      onEnter: () => gsap.to(section, { zIndex: 1 }),
+      onLeaveBack: () => gsap.to(section, { zIndex: 0 }),
+      markers: false 
+    });
+  
+    gsap.fromTo(section, 
+      { autoAlpha: 0, y: 50 },
+      { 
+        duration: 1,
+        autoAlpha: 1, 
+        y: 0,
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%', 
+          end: 'top 30%', 
+          scrub: true, 
+          markers: false 
+        }
+      }
+    );
+  });
+  
+
+  document.querySelectorAll('.sidebar li').forEach(item => {
+    item.addEventListener('click', (event) => {
+      document.querySelectorAll('.sidebar li').forEach(li => li.classList.remove('active'));
+      event.currentTarget.classList.add('active'); 
+  
+      const sectionId = event.currentTarget.getAttribute('data-section');
+      const sectionElement = document.getElementById(sectionId);
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: { 
+          y: sectionElement, 
+          offsetY: 180 
+        },
+        ease: "power2.inOut"
+      });
+    });
+  });
+  

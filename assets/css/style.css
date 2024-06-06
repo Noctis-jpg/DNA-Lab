@@ -88,15 +88,38 @@ body p {
 .AboutArea {
   display: none;
 }
-@keyframes spin {
+
+@-webkit-keyframes spin {
   0% {
+    -webkit-transform: rotate(0deg);
     /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);
     /* IE 9 */
     transform: rotate(0deg);
     /* Firefox 16+, IE 10+, Opera */
   }
   100% {
+    -webkit-transform: rotate(360deg);
     /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);
     /* IE 9 */
     transform: rotate(360deg);
     /* Firefox 16+, IE 10+, Opera */
@@ -109,7 +132,9 @@ body p {
   height: 100%;
   background: black;
   z-index: 99;
+  -webkit-transform: translateX(0);
   /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(0);
   /* IE 9 */
   transform: translateX(0);
   /* Firefox 16+, IE 10+, Opera */
@@ -127,28 +152,36 @@ body p {
 
 /* Loaded */
 .loaded #loader-wrapper .loader-section.section-up {
+  -webkit-transform: translateY(-100%);
   /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateY(-100%);
   /* IE 9 */
   transform: translateY(-100%);
   /* Firefox 16+, IE 10+, Opera */
 }
 
 .loaded #loader-wrapper .loader-section.section-bottom {
+  -webkit-transform: translateY(100%);
   /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateY(100%);
   /* IE 9 */
   transform: translateY(100%);
   /* Firefox 16+, IE 10+, Opera */
 }
 
 .loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);
   /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(-100%);
   /* IE 9 */
   transform: translateX(-100%);
   /* Firefox 16+, IE 10+, Opera */
 }
 
 .loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);
   /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(100%);
   /* IE 9 */
   transform: translateX(100%);
   /* Firefox 16+, IE 10+, Opera */
@@ -160,11 +193,13 @@ body p {
 
 .loaded #loader {
   opacity: 0;
+  -webkit-transition: all 0.8s ease-out;
   transition: all 0.8s ease-out;
 }
 
 .loaded #loader-wrapper {
   visibility: hidden;
+  -webkit-transition: all 0.3s 3s ease-out;
   transition: all 0.3s 3s ease-out;
 }
 
@@ -172,6 +207,7 @@ body p {
 .loaded #loader-wrapper .loader-section.section-bottom,
 .loaded #loader-wrapper .loader-section.section-right,
 .loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transition: all 2.7s 0.3s cubic-bezier(0.39, 1.05, 0.64, -0.04);
   transition: all 2.7s 0.3s cubic-bezier(0.39, 1.05, 0.64, -0.04);
 }
 
@@ -183,8 +219,7 @@ header {
   width: 100%;
   z-index: 9999;
   background-color: rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   padding: 0.5rem 0;
 }
 header .Logo {
@@ -376,8 +411,7 @@ header .menu-toggle.active .hamburger::after {
 .Hero .VideoArea video {
   width: 100%;
   height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .Hero .VideoArea .TextArea {
   position: absolute;
@@ -398,8 +432,7 @@ header .menu-toggle.active .hamburger::after {
 .ServicesHero .VideoArea video {
   width: 100%;
   height: 75vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .ServicesHero .VideoArea .TextArea {
   position: absolute;
@@ -821,8 +854,7 @@ header .menu-toggle.active .hamburger::after {
 .InfoSection .video img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .InfoSection .video .play-button {
   position: absolute;
@@ -1065,6 +1097,14 @@ footer .about-link {
   transform: translateY(-50px);
 }
 
+.hakkimizdaDnaSection {
+  margin-top: 5rem;
+}
+.hakkimizdaDnaSection #video_hakkimzda {
+  width: 100%;
+  height: 100%;
+}
+
 .Annotation {
   margin-top: 2rem;
   padding: 2rem;
@@ -1079,6 +1119,8 @@ footer .about-link {
 }
 .Annotation .BgDiffListArea {
   padding: 1rem 10px;
+  -webkit-box-shadow: 0px 0px 34px 8px rgba(158, 158, 158, 0.1);
+  -moz-box-shadow: 0px 0px 34px 8px rgba(158, 158, 158, 0.1);
   box-shadow: 0px 0px 34px 8px rgba(158, 158, 158, 0.1);
 }
 .Annotation .BgDiffListArea .ListTitle {
@@ -1175,4 +1217,187 @@ footer .about-link {
   background: linear-gradient(135deg, rgba(0, 62, 137, 0.5) 0%, rgba(37, 117, 252, 0.46) 100%);
   filter: blur(100px);
   z-index: 99;
+}
+
+.Statisc {
+  position: relative;
+}
+.Statisc .StatstcHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 6rem;
+}
+.Statisc .StatstcHeader h2 {
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+}
+.Statisc .container .row .col-md-4:nth-child(1) .AreaStats {
+  animation: moveStats1 10s infinite alternate ease-in-out;
+}
+.Statisc .container .row .col-md-4:nth-child(2) .AreaStats {
+  animation: moveStats2 10s infinite alternate ease-in-out;
+}
+.Statisc .container .row .col-md-4:nth-child(3) .AreaStats {
+  animation: moveStats3 10s infinite alternate ease-in-out;
+}
+.Statisc .AreaStats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: 50px 0;
+}
+.Statisc .AreaStats .bg {
+  background-color: #fff3f3;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: -40px;
+  border-radius: 100%;
+}
+.Statisc .AreaStats::before, .Statisc .AreaStats::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 225%;
+  filter: blur(30px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.Statisc .AreaStats::before {
+  background: radial-gradient(circle, rgba(0, 62, 137, 0.521) 0%, rgba(37, 117, 252, 0.46) 100%);
+}
+.Statisc .AreaStats::after {
+  background: radial-gradient(circle, rgba(0, 62, 137, 0.521) 0%, rgba(0, 62, 137, 0.5) 100%);
+}
+.Statisc .AreaStats:nth-child(2)::before {
+  background: radial-gradient(circle, rgba(0, 62, 137, 0.521) 0%, rgba(117, 252, 37, 0.46) 100%);
+}
+.Statisc .AreaStats:nth-child(2)::after {
+  background: radial-gradient(circle, rgba(117, 252, 37, 0.46) 0%, rgba(0, 62, 137, 0.521) 100%);
+}
+.Statisc .AreaStats:nth-child(3)::before {
+  background: radial-gradient(circle, rgba(137, 62, 0, 0.5) 0%, rgba(252, 117, 37, 0.46) 100%);
+}
+.Statisc .AreaStats:nth-child(3)::after {
+  background: radial-gradient(circle, rgba(252, 117, 37, 0.46) 0%, rgba(137, 62, 0, 0.5) 100%);
+}
+.Statisc .AreaStats .Number {
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+  z-index: 3;
+}
+.Statisc .AreaStats .StatTitle {
+  font-size: 25px;
+  font-weight: 500;
+  color: white;
+  z-index: 3;
+}
+
+@keyframes moveStats1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, -20px);
+  }
+  50% {
+    transform: translate(-20px, 20px);
+  }
+  75% {
+    transform: translate(20px, 20px);
+  }
+  100% {
+    transform: translate(-20px, -20px);
+  }
+}
+@keyframes moveStats2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-20px, 20px);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
+  75% {
+    transform: translate(-20px, -20px);
+  }
+  100% {
+    transform: translate(20px, 20px);
+  }
+}
+@keyframes moveStats3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, 20px);
+  }
+  50% {
+    transform: translate(-20px, -20px);
+  }
+  75% {
+    transform: translate(-20px, 20px);
+  }
+  100% {
+    transform: translate(20px, -20px);
+  }
+}
+.sidebar {
+  position: fixed;
+  top: 35%;
+  left: 0;
+  width: 360px;
+  background-color: rgba(244, 244, 244, 0.9);
+  z-index: 10;
+  display: none;
+  padding: 20px;
+}
+.sidebar ul {
+  transition: 0.3s ease;
+}
+.sidebar ul li {
+  cursor: pointer;
+  margin: 15px 0;
+  transition: 0.3s ease-in-out;
+}
+.sidebar ul li:hover {
+  transition: 0.3s ease;
+  text-decoration: underline;
+}
+.sidebar ul li.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.section {
+  height: 90vh;
+  padding: 20px;
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.section:nth-child(odd) {
+  background-color: #d3d3d3;
+}
+
+.GsapFixSection {
+  position: relative;
 }/*# sourceMappingURL=style.css.map */

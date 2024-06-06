@@ -137,8 +137,7 @@
   .Hero .VideoArea video {
     width: 100%;
     height: 80vh;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .Hero .VideoArea .TextArea {
     position: absolute;
@@ -365,8 +364,7 @@
   .InfoSection .video img {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
   .InfoSection .video .play-button {
     position: absolute;
