@@ -259,3 +259,13 @@ let shape = gsap.timeline({
         },
     }
 });
+
+
+var swiper = new Swiper(".Certifates", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
