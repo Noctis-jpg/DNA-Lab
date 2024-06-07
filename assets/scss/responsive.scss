@@ -15,6 +15,9 @@ $PopUpColor : #b1b1b1;
             }
         }
     }   
+    .AboutAreaContact{
+        height: 100vh;
+    }
 }
 
 @media screen and (min-width:1200px) and (max-width:1600px){
@@ -28,6 +31,9 @@ $PopUpColor : #b1b1b1;
             }
         }
     }   
+    .AboutAreaContact{
+        height: 100vh;
+    }
 }
 
 @media screen and (min-width:1605px) and (max-width:2000px){
@@ -40,6 +46,15 @@ $PopUpColor : #b1b1b1;
                 height: 80px;
             }
         }
+    }
+    .AboutAreaContact .LittleHead{
+        height: 45vh;     
+    }
+    .AboutAreaContact{
+        height: 80vh;
+    }
+    .AboutAreaContact .symImgTwo{
+        left: 33%;    
     }
 }
 @media screen and (max-width:991px) {
