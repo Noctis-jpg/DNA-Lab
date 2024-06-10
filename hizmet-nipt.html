@@ -13,13 +13,29 @@
     <title>DNA Laboratuvarları Genetik Hastalıklar Değerlendirme Merkezi </title>
 </head>
 <style>
-    /* AKORDİYON */
-
-
+/* AKORDİYON */
 .container {
    width: 100%;
 }
+.accordion__item{
+    background-color: #f4f4f4;
+    border-bottom: 1px solid white;
+    padding: 1rem 0;
 
+}
+.accordion__content{
+    position: relative;
+    padding-left: 20px;
+}
+.accordion__content::before {
+   content: "•";
+   position: absolute;
+   left: 0;
+   color: black;
+}
+.TitleArr{
+    margin-bottom: 1rem;
+}
 .accordion {
    margin: 0;
    padding: 0;
@@ -50,7 +66,8 @@ input[type="checkbox"] {
 
 .accordion__title {
    padding-right: 1.5rem;
-   font-size: 1rem;
+   font-size: 1.1rem;
+
 }
 
 .accordion__arrow {
@@ -86,30 +103,67 @@ input[type="checkbox"]:checked ~ .accordion__arrow::after {
    transform: translateX(-2px) rotate(-45deg);
 }
 
-.accordion__content {
-   position: relative;
-   max-height: 200px;
-   margin: 0;
-   opacity: 1;
-   overflow: hidden;
-   transition: all 0.35s ease-in-out;
-   line-height: 1.6;
-   z-index: 2;
+.accordion__content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 100%;
+    margin: 0;
+    opacity: 1;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    line-height: 1.6;
+    z-index: 2;
+    position: relative;
+
 }
 
-input[type="checkbox"]:checked ~ .accordion__content {
+input[type="checkbox"]:checked ~ .accordion__content-wrapper {
    max-height: 0;
    opacity: 0;
 }
-
+.accordion__content:first-child{
+    margin-top: 1rem;
+}
+.th_col {
+    flex: 1 1 30%;
+    margin: 5px;
+    padding: 10px 5px;
+    border: 1px solid rgb(177, 177, 177);
+    color: black;
+    font-weight: 400;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+.th_col:hover{
+    background-color: #003e89;
+    color: white;
+}
 @media (max-width: 768px) {
    .container {
       width: 100%;
    }
-}
+   .th_col{
+    flex: 1 45%;
+   }
+   .dna-section ul{
+    padding: 0;
+   }
+   .TopImg{
+    top: 80px;
 
+   }
+   .geometric-shape{
+    display: none;
+   }
+   footer .CopyRightArea::before{
+    display: none;
+   }
+   footer .CopyRightArea::after{
+    display: none;
+   }
+}
 </style>
-<body class="">
+<body class="loaded">
     <header id="header" class="header-video">
         <div class="container-fluid">
             <div class="row align-items-center">
@@ -271,56 +325,52 @@ input[type="checkbox"]:checked ~ .accordion__content {
                    <li class="accordion__item">
                       <input type="checkbox" checked>
                       <i class="accordion__arrow"></i>
-                      <h3 class="accordion__title">OTOZOMAL ANÖPLOİDİLER</h3>
+                      <h3 class="accordion__title mt-2 mb-2">OTOZOMAL ANÖPLOİDİLER</h3>
+                      <div class="accordion__content-wrapper flex-column">
                       <p class="accordion__content">Patau Sendromu (Trizomi 13)</p>
                       <p class="accordion__content">Edwards Sendromu (Trizomi 18)</p>
                       <p class="accordion__content">Down Sendromu (Trizomi 21)</p>
                       <p class="accordion__content">NIPT testi en sık görülen fetal anöploidileri, genetik anomalileri test etmesinin yanı sıra tüm kromozomları test eder.</p>
+                    </div>
                    </li>
                    <li class="accordion__item">
                       <input type="checkbox" checked>
                       <i class="accordion__arrow"></i>
-                      <h3 class="accordion__title">DİĞER KROMOZOMLAR</h3>
-                      <p class="accordion__content">Trizomi1</p>
-                      <p class="accordion__content">Trizomi2</p>
-                      <p class="accordion__content">Trizomi3</p>
-                      <p class="accordion__content">Trizomi4</p>
-                      <p class="accordion__content">Trizomi5</p>
-                      <p class="accordion__content">Trizomi6</p>
-                      <p class="accordion__content">Trizomi7</p>
-                      <p class="accordion__content">Trizomi8</p>
-                      <p class="accordion__content">Trizomi9</p>
-                      <p class="accordion__content">Trizomi10</p>
-                      <p class="accordion__content">Trizomi11</p>
-                      <p class="accordion__content">Trizomi12</p>
-                      <p class="accordion__content">Trizomi14</p>
-                      <p class="accordion__content">Trizomi15</p>
-                      <p class="accordion__content">Trizomi16</p>
-                      <p class="accordion__content">Trizomi17</p>
-                      <p class="accordion__content">Trizomi19</p>
-                      <p class="accordion__content">Trizomi20</p>
-                      <p class="accordion__content">Trizomi21</p>
+                      <h3 class="accordion__title mt-2 mb-2">DİĞER KROMOZOMLAR</h3>
+                      <div class="accordion__content-wrapper">
+                      <p class="th_col">Trizomi1</p>
+                      <p class="th_col">Trizomi3</p>
+                      <p class="th_col">Trizomi4</p>
+                      <p class="th_col">Trizomi5</p>
+                      <p class="th_col">Trizomi6</p>
+                      <p class="th_col">Trizomi7</p>
+                      <p class="th_col">Trizomi8</p>
+                      <p class="th_col">Trizomi9</p>
+                      <p class="th_col">Trizomi10</p>
+                      <p class="th_col">Trizomi11</p>
+                      <p class="th_col">Trizomi12</p>
+                      <p class="th_col">Trizomi14</p>
+                      <p class="th_col">Trizomi15</p>
+                      <p class="th_col">Trizomi16</p>
+                      <p class="th_col">Trizomi17</p>
+                      <p class="th_col">Trizomi19</p>
+                      <p class="th_col">Trizomi20</p>
+                      <p class="th_col">Trizomi21</p>
+                    </div>
                    </li>
                    <li class="accordion__item">
                       <input type="checkbox" checked>
                       <i class="accordion__arrow"></i>
-                      <h3 class="accordion__title">CİNSİYET KROMOZOMU ANÖPLOİDİLERİ</h3>
+                      <h3 class="accordion__title mt-2 mb-2">CİNSİYET KROMOZOMU ANÖPLOİDİLERİ</h3>
+                      <div class="accordion__content-wrapper flex-column">
                       <p class="accordion__content">Turner Sendromu (Monozomi X)</p>
                       <p class="accordion__content">Triple X Sendromu (Trizomi X)</p>
                       <p class="accordion__content">Klinefelter Sendromu (XXY)</p>
                       <p class="accordion__content">Jacobs Sendromu (XYY)</p>
                       <p class="accordion__content">XXYY Sendromu</p>
+                      </div>
                    </li>
-                   <li class="accordion__item">
-                      <input type="checkbox" checked>
-                      <i class="accordion__arrow"></i>
-                      <h3 class="accordion__title">DELESYON VE DUPLİKASYONLAR</h3>
-                      <p class="accordion__content">DiGeorge Sendromu (22q11.2)</p>
-                      <p class="accordion__content">1p36 delesyon Sendromu (1p36)</p>
-                      <p class="accordion__content">Smith-Magenis Sendromu (17p11.2)</p>
-                      <p class="accordion__content">Wolf-Hirschhorn Sendromu (4p16.3)</p>
-                      <p class="accordion__content">Aynı zaman 10mb’den büyük mikrodelesyon/duplikasyonlar tespit edilmektedir.</p>
-                   </li>
+
                 </ul>
              </div>
           </div>
@@ -330,22 +380,109 @@ input[type="checkbox"]:checked ~ .accordion__content {
         </div>
         <div class="row mt-5">
           <div class="col-md-12">
+            <ul>
             <li class="accordion__item">
                 <input type="checkbox" checked>
                 <i class="accordion__arrow"></i>
-                <h2 class="accordion__title">DELESYON VE DUPLİKASYONLAR</h2>
-                <p class="accordion__content">Parsiyel Monozomi 1p</p>
-                <p class="accordion__content">Monozomi 1q21→q32</p>
-                <p class="accordion__content">Monozomi 1q42→qter</p>
-                <p class="accordion__content">Trizomi 1q23→qter</p>
-                <p class="accordion__content">Parsiyel Monozomi 2p</p>
-                <p class="accordion__content">Parsiyel Trizomi 2p</p>
-                <p class="accordion__content">Parsiyel Monozomi 2q</p>
-                <p class="accordion__content">Parsiyel Trizomi 2q</p>
-                <p class="accordion__content">Monozomi 3p11→p21</p>
-                <p class="accordion__content">Monozomi 3p25→pter</p>
-                <p class="accordion__content">Parsiyel Trizomi 3p</p>
-             </li>      
+                <h3 class="accordion__title mt-2 mb-2 TitleArr">DELESYON VE DUPLİKASYONLAR</h3>
+                <div class="accordion__content-wrapper">
+                   <p class="th_col">Parsiyel Monozomi 1p</p>
+                   <p class="th_col">Monozomi 1q21→q32</p>
+                   <p class="th_col">Monozomi 1q42→qter</p>
+                   <p class="th_col">Trizomi 1q23→qter</p>
+                   <p class="th_col">Parsiyel Monozomi 2p</p>
+                   <p class="th_col">Parsiyel Trizomi 2p</p>
+                   <p class="th_col">Parsiyel Monozomi 2q</p>
+                   <p class="th_col">Parsiyel Trizomi 2q</p>
+                   <p class="th_col">Monozomi 3p11→p21</p>
+                   <p class="th_col">Monozomi 3p25→pter</p>
+                   <p class="th_col">Parsiyel Trizomi 3p</p>
+                   <p class="th_col">Parsiyel Monozomi 3q</p>
+                   <p class="th_col">Parsiyel Trizomi 3q</p>
+                   <p class="th_col">Parsiyel Monozomi ve Parsiyel Trizomi 3q</p>
+                   <p class="th_col">Parsiyel Monozomi 4p</p>
+                   <p class="th_col">Parsiyel Trizomi 4p</p>
+                   <p class="th_col">Monozomi 4q21→q31</p>
+                   <p class="th_col">Monozomi 4q31→qter</p>
+                   <p class="th_col">Parsiyel Trizomi 4q</p>
+                   <p class="th_col">Parsiyel Monozomi 4p ve Parsiyel Trizomi 4q</p>
+                   <p class="th_col">Parsiyel Trizomi 5p</p>
+                   <p class="th_col">Parsiyel Monozomi 5q</p>
+                   <p class="th_col">Parsiyel Trizomi 5q</p>
+                   <p class="th_col">Parsiyel Trizomi 6p</p>
+                   <p class="th_col">Parsiyel Monozomi 6q</p>
+                   <p class="th_col">Parsiyel Trizomi 6q</p>
+                   <p class="th_col">Parsiyel Trizomi 12q</p>
+                   <p class="th_col">Monozomi 13q14</p>
+                   <p class="th_col">Monozomi 13q21→qter</p>
+                   <p class="th_col">Trizomi 13cen→q14</p>
+                   <p class="th_col">Trizomi 13q21→qter</p>
+                   <p class="th_col">Parsiyel Trizomi 14</p>
+                   <p class="th_col">Trizomi 14q24-qter</p>
+                   <p class="th_col">Süpernumerik inv dup (15)</p>
+                   <p class="th_col">Trizomi 15q22→qter</p>
+                   <p class="th_col">Parsiyel Trizomi 16p</p>
+                   <p class="th_col">Parsiyel Monozomi 16q</p>
+                   <p class="th_col">Parsiyel Trizomi 16q</p>
+                   <p class="th_col">Trizomi 17pter→q21</p>
+                   <p class="th_col">Parsiyel Monozomi 18p</p>
+                   <p class="th_col">Parsiyel Tetrazomi18p</p>
+                   <p class="th_col">Trizomi 18pter→q12</p>
+                   <p class="th_col">Monozomi 18q21→qter</p>
+                   <p class="th_col">Trizomi 18q12→qter</p>
+                   <p class="th_col">Parsiyel Monozomi 20p</p>
+                   <p class="th_col">Trizomi 20p</p>
+                   <p class="th_col">Parsiyel Monozomi 21</p>
+                   <p class="th_col">1p36 Delesyon Sendromu</p>
+                   <p class="th_col">2p16.1-p15 Delesyon Sendromu</p>
+                   <p class="th_col">2q33.1 Delesyon Sendromu</p>
+                   <p class="th_col">2q37 Delesyon Sendromu</p>
+                   <p class="th_col">3p Delesyon Sendromu</p>
+                   <p class="th_col">Parsiyel Monozomi 7p</p>
+                   <p class="th_col">Parsiyel Trizomi 7p</p>
+                   <p class="th_col">Monozomi 7q32→qter</p>
+                   <p class="th_col">Trizomi 7q21→q31</p>
+                   <p class="th_col">Trizomi 7q32→qter</p>
+                   <p class="th_col">Parsiyel Trizomi 8q</p>
+                   <p class="th_col">Parsiyel Monozomi 9p</p>
+                   <p class="th_col">Parsiyel Trizomi 9p</p>
+                   <p class="th_col">Parsiyel Monozomi 9q</p>
+                   <p class="th_col">Parsiyel Trizomi 9q</p>
+                   <p class="th_col">Parsiyel Monozomi 10p</p>
+                   <p class="th_col">Parsiyel Trizomi 10p</p>
+                   <p class="th_col">Parsiyel Monozomi 10q</p>
+                   <p class="th_col">Parsiyel Trizomi 10q</p>
+                   <p class="th_col">Parsiyel Trizomi 11p</p>
+                   <p class="th_col">Parsiyel Monozomi 11q</p>
+                   <p class="th_col">Parsiyel Trizomi 11q</p>
+                   <p class="th_col">Parsiyel Monozomi 12p</p>
+                   <p class="th_col">Parsiyel Trizomi 12p</p>
+                   <p class="th_col">4p16.31 Delesyon Sendromu</p>
+                   <p class="th_col">Cri-du-chat Sendromu</p>
+                   <p class="th_col">7q11.2 Delesyon Sendromu</p>
+                   <p class="th_col">Langer-Giedion Sendromu</p>
+                   <p class="th_col">8p23.1 Delesyon Sendromu</p>
+                   <p class="th_col">8p23.1 Duplikasyonsendromu</p>
+                   <p class="th_col">11q23.3-q25 Delesyon Sendromu</p>
+                   <p class="th_col">Angelman Sendromu</p>
+                   <p class="th_col">Prader–Willi Sendromu</p>
+                   <p class="th_col">15q26 Duplikasyon Sendromu</p>
+                   <p class="th_col">16p12.2 Mikrodelesyon Sendromu</p>
+                   <p class="th_col">17p13.3 Delesyon Sendromu</p>
+                   <p class="th_col">Smith-Magenis Sendromu</p>
+                   <p class="th_col">Potocki-Lupski Sendromu</p>
+                   <p class="th_col">22q11.2 Delesyon Sendromu</p>
+                   <p class="th_col">Parsiyel Monozomi 20p</p>
+                   <p class="th_col">Trizomi 20p</p>
+                   <p class="th_col">Parsiyel Monozomi 21</p>
+                   <p class="th_col">DiGeorge Sendromu (22q11.2)</p>
+                   <p class="th_col">1p36 delesyon Sendromu (1p36)</p>
+                   <p class="th_col">Smith-Magenis Sendromu (17p11.2)</p>
+                   <p class="th_col">Wolf-Hirschhorn Sendromu (4p16.3)</p>
+                   <p class="th_col">Aynı zaman 10mb’den büyük mikrodelesyon/duplikasyonlar tespit edilmektedir.</p>
+                </div>
+             </li>
+            </ul>
             </div>
         </div>
         <div class="row mt-5">
