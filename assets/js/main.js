@@ -332,4 +332,3 @@ var swiper = new Swiper(".Certifates", {
     });
   });
   
-
