@@ -15,6 +15,9 @@ $PopUpColor : #b1b1b1;
             }
         }
     }   
+    .AboutAreaContact{
+        height: 100vh;
+    }
 }
 
 @media screen and (min-width:1200px) and (max-width:1600px){
@@ -28,6 +31,9 @@ $PopUpColor : #b1b1b1;
             }
         }
     }   
+    .AboutAreaContact{
+        height: 100vh;
+    }
 }
 
 @media screen and (min-width:1605px) and (max-width:2000px){
@@ -40,6 +46,42 @@ $PopUpColor : #b1b1b1;
                 height: 80px;
             }
         }
+    }
+    .AboutAreaContact .LittleHead{
+        height: 45vh;     
+    }
+    .AboutAreaContact{
+        height: 80vh;
+    }
+    .AboutAreaContact .symImgTwo{
+        left: 33%;    
+    }
+}
+@media screen and (min-width:2001px) and (max-width:3000px){
+    .AboutAreaContact .LittleHead{
+        height: 45vh;     
+    }
+    .AboutAreaContact{
+        height: 80vh;
+    }
+    .AboutAreaContact .symImgTwo{
+        left: 38%;    
+    }
+    .AboutAreaContact .symImgOne{
+        left: 0px;
+        top: 5%;
+    }
+    .AboutAreaContact .symImgThree{
+        right: 0%;
+        top: 5%;
+    }
+    .AboutAreaContact .symImgFour {
+        bottom: 5%;
+        left: 0%;
+    }
+    .AboutAreaContact .symImgFive{
+        bottom: 5%;
+        right: 0%;
     }
 }
 @media screen and (max-width:991px) {

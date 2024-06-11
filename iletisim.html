@@ -90,87 +90,103 @@
     <section class="contact-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 sticky">
+                <div class="col-md-6 contact-form">
+                    <div class="stK">
                     <h2>Bize Ulaşın</h2>
                     <form>
                         <!-- Name input -->
-                        <div data-mdb-input-init class="form-outline mb-4">
-                          <input placeholder="Ad Soyad" type="text" id="form4Example1" class="form-control" />
+                        <div class="form-outline mb-4">
+                            <input placeholder="Ad Soyad" type="text" id="form4Example1" class="form-control" required />
                         </div>
-                      
+    
                         <!-- Email input -->
-                        <div data-mdb-input-init class="form-outline mb-4">
-                          <input placeholder="Email" type="email" id="form4Example2" class="form-control" />
+                        <div class="form-outline mb-4">
+                            <input placeholder="Email" type="email" id="form4Example2" class="form-control" required />
                         </div>
-                      
+    
                         <!-- Message input -->
-                        <div data-mdb-input-init class="form-outline mb-4">
-                          <textarea placeholder="Açıklama" class="form-control" id="form4Example3" rows="4"></textarea>
+                        <div class="form-outline mb-4">
+                            <textarea placeholder="Açıklama" class="form-control" id="form4Example3" rows="4" required></textarea>
                         </div>
                         <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
                             <label class="form-check-label" for="exampleCheck1"><a href="#">Aydınlatma metnini</a> okudum kabul ediyorum</label>
-                          </div>
-                        <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block mb-4">Gönder</button>
-                      </form>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Gönder</button>
+                    </form>
                     <div class="map">
                         <h3>Harita</h3>
                         <iframe src="https://maps.google.com/maps?q=Palladium%20Tower%20İş%20Merkezi%20Barbaros%20Mah.%20Kardelen%20Sok.%20No:2%20Kat:14%20İç%20Kapı%20No:46%2034746%20Ataşehir/İstanbul&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
-                <div class="col-md-6">
+                </div>
+                
+                <div class="col-md-6 contact-info">
                     <div class="row">
                         <div class="col-md-6">
-                    <div class="contact-info">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="Area">
-                            <h4>Çalışma Saatleri</h4>
-                            <span>Pazartesi - Cuma | 08:30 - 17:30</span>
-                            <span>Cumartesi | 08:30 - 15:30</span>
+                            <div class="info-box">
+                                <h4><i class="fas fa-clock"></i>Çalışma Saatleri</h4>
+                                <p>Pazartesi - Cuma | 08:30 - 17:30</p>
+                                <p>Cumartesi | 08:30 - 15:30</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h4><i class="fa-solid fa-location-dot"></i>Adres</h4>
+                                <p>Teşvikiye Mah. Hakkı Yeten Cad. Vital Fulya Plaza No:23 Şişli / İstanbul / Türkiye</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h4><i class="fas fa-phone"></i>Telefon </h4>
+                                <ul>
+                                    <li><a href="tel:+902122962963">+90 212 296 29 63</a></li>
+                                    <li><a href="tel:+902122962964">+90 212 296 29 64</a></li>
+                                    <li><a href="tel:+905536962963">+90 553 696 29 63</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-box">
+                                <h4><i class="fas fa-envelope"></i>Mail Adresimiz</h4>
+                                <ul>
+                                    <li><a href="mailto:dna@dnalab.com.tr">dna@dnalab.com.tr</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <h4><i class="fa-solid fa-users"></i>UZMAN VE TECRÜBELİ EKİP</h4>
+                                <p>Endemik türlerin tüm genom dizilemesinden endüstriyel atık suların metagenomik profillemesine kadar yüzlerce farklı çeşit Ar-Ge projesinde başarıyla hizmet vermekteyiz.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <h4><i class="fa-solid fa-users"></i>HIZLI SONUÇ</h4>
+                                <p>Biyoinformatik analizler için ortalama hizmet süremiz 2-5 gündür. Gelişmiş analizlerimiz ise genellikle bir hafta içinde tamamlanır.                               </p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <h4><i class="fa-solid fa-users"></i>ÖZELLEŞTİRİLMİŞ RAPOR VE VERİ GÖRSELLEŞTİRME</h4>
+                                <p>Proje sonunda görsel olarak zengin ve anlaşılması kolay biyoinformatik analiz raporları sunuyoruz. Görsel ve grafikleri, seçtiğiniz derginin formatı ile tamamen uyumlu olacak şekilde hazırlıyoruz.                           </p>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="info-box">
+                                <h4><i class="fa-solid fa-users"></i>EĞİTİM VE DESTEK
+                                </h4>
+                                <p>Yeni analiz teknolojilerinin ve gelişmiş istatistiksel yöntemlerin anlaşılması zor olabilmektedir. Bu nedenle biyoinformatik ekibimiz ile, tamamlanan projelerin ardından, uygulanan test ve yaklaşımlara yönelik proje sahiplerine eğitimler sunmaktayız.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="contact-info">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="Area">
-                            <h4>Adres</h4>
-                            <span>Teşvikiye Mah. Hakkı Yeten Cad.
-                                Vital Fulya Plaza No:23
-                                Şişli / İstanbul / Türkiye</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="contact-info">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="Area">
-                            <h4>Telefon Numaralarımız</h4>
-                            <ul>
-                                <li><a href="#">+90 212 296 29 63</a></li>
-                                <li><a href="#">+90 212 296 29 64</a></li>
-                                <li><a href="#">+90 553 696 29 63</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="contact-info">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div class="Area">
-                            <h4>Mail Adresimiz</h4>
-                            <ul>
-                                <li><a href="mailto:dna@dnalab.com.tr">dna@dnalab.com.tr</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                </div>
-  
                 </div>
             </div>
         </div>
     </section>
+    
 
 
     <section class="AboutAreaContact">
