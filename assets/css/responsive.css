@@ -107,6 +107,7 @@
     position: absolute;
     bottom: 0;
     border-top: 5px solid #a4a4a4;
+    overflow: scroll;
   }
   .popup-menu .absoClass_ym .justify-content-center {
     justify-content: start !important;
@@ -122,7 +123,7 @@
   }
   .popup-menu .popup-left,
   .popup-menu .popup-right {
-    width: 50%;
+    width: 100%;
     opacity: 0;
   }
   .popup-menu .popup-left ul {

@@ -15,7 +15,33 @@ $(document).ready(function(){
         logoAfter.style.left = '15px';
     });
 });
-
+var swiper = new Swiper(".logosSw", {
+    slidesPerView: 5,
+    spaceBetween: 20,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 50,
+      },
+    },
+  });
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -189,51 +215,124 @@ let Fx = gsap.timeline({
 })
 
 document.addEventListener("DOMContentLoaded", function() {
-    const header = document.getElementById('header');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const popupMenu = document.getElementById('popupMenu');
-    const closeBtn = document.querySelector('.close-btn');
-  
-    function openMenu() {
+  const header = document.getElementById('header');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const popupMenu = document.getElementById('popupMenu');
+  const closeBtn = document.querySelector('.close-btn');
+  const dffAl = document.querySelector('.DffAl');
+  const popupRight = document.querySelector('.popup-right');
+  const mediaQuery = window.matchMedia('(max-width: 768px)');
+  const submenuLinks = document.querySelectorAll('.popup-left ul li > a');
+
+  function openMenu() {
       gsap.timeline()
-        .to(popupMenu, { width: '100%', height: '100%', opacity: 1, duration: 0.5 })
-        .to(popupMenu.querySelector('.popup-left'), { opacity: 1, duration: 0.5 }, "-=0.25")
-        .to(popupMenu.querySelector('.popup-right'), { opacity: 1, duration: 0.5 }, "-=0.25");
-    }
-  
-    function closeMenu() {
+          .to(popupMenu, { width: '100%', height: '100%', opacity: 1, duration: 0.5 })
+          .to(popupMenu.querySelector('.popup-left'), { opacity: 1, duration: 0.5 }, "-=0.25")
+          .to(popupMenu.querySelector('.popup-right'), { opacity: 1, duration: 0.5 }, "-=0.25");
+  }
+
+  function closeMenu() {
       gsap.timeline()
-        .to(popupMenu.querySelector('.popup-left'), { opacity: 0, duration: 0.25 })
-        .to(popupMenu.querySelector('.popup-right'), { opacity: 0, duration: 0.25 }, "-=0.25")
-        .to(popupMenu, { width: '0', height: '0', opacity: 0, duration: 0.5 });
-    }
-  
-    menuToggle.addEventListener('click', function() {
+          .to(popupMenu.querySelector('.popup-left'), { opacity: 0, duration: 0.25 })
+          .to(popupMenu.querySelector('.popup-right'), { opacity: 0, duration: 0.25 }, "-=0.25")
+          .to(popupMenu, { width: '0', height: '0', opacity: 0, duration: 0.5 });
+      closeAllSubMenus(); // Menü kapatıldığında tüm alt menüleri de kapatalım
+  }
+
+  function toggleSubMenu(link) {
+      const submenu = link.nextElementSibling;
+      
+      if (!submenu || !submenu.classList.contains('submenu')) {
+          return; // Eğer alt menü yoksa veya sınıfı 'submenu' değilse, çık
+      }
+
+      if (submenu.style.display === 'block' && submenu.style.opacity === '1') {
+          closeSubMenu(submenu, link);
+      } else {
+          closeAllSubMenus(); // Açmadan önce diğer açık olan alt menüleri kapatalım
+          openSubMenu(submenu, link);
+      }
+  }
+
+  function openSubMenu(submenu, link) {
+      if (mediaQuery.matches) {
+          gsap.to(submenu, { display: 'block', opacity: 1, height: 'auto', duration: 0.5 });
+      } else {
+          gsap.to(dffAl, { display: 'none', opacity: 0, duration: 0.5 });
+          gsap.to(submenu, { display: 'block', opacity: 1, height: 'auto', duration: 0.5 });
+          if (!popupRight.contains(submenu)) {
+              popupRight.appendChild(submenu);
+              submenu.setAttribute('data-original-parent', link.parentElement.getAttribute('id'));
+          }
+      }
+  }
+
+  function closeSubMenu(submenu, link) {
+      if (mediaQuery.matches) {
+          gsap.to(submenu, { display: 'none', opacity: 0, height: '0', duration: 0.5 });
+      } else {
+          gsap.to(dffAl, { display: 'flex', opacity: 1, duration: 0.5 });
+          gsap.to(submenu, { display: 'none', opacity: 0, height: '0', duration: 0.5 });
+          if (popupRight.contains(submenu)) {
+              const originalParentId = submenu.getAttribute('data-original-parent');
+              const originalParent = document.getElementById(originalParentId);
+              if (originalParent) {
+                  originalParent.appendChild(submenu);
+              }
+          }
+      }
+  }
+
+  function closeAllSubMenus() {
+      const submenus = document.querySelectorAll('.submenu');
+      submenus.forEach(submenu => {
+          gsap.set(submenu, { display: 'none', opacity: 0, height: '0' });
+          if (popupRight.contains(submenu)) {
+              const originalParentId = submenu.getAttribute('data-original-parent');
+              const originalParent = document.getElementById(originalParentId);
+              if (originalParent) {
+                  originalParent.appendChild(submenu);
+              }
+          }
+      });
+  }
+
+  menuToggle.addEventListener('click', function() {
       this.classList.toggle('active');
       if (this.classList.contains('active')) {
-        openMenu();
+          openMenu();
       } else {
-        closeMenu();
+          closeMenu();
       }
-    });
-  
-    closeBtn.addEventListener('click', function() {
+  });
+
+  closeBtn.addEventListener('click', function() {
       closeMenu();
       menuToggle.classList.remove('active');
-    });
-  
-    window.addEventListener('scroll', function() {
-      if (window.scrollY > 400) { // Ayarlamak için mesafeyi değiştirin
-        gsap.to(header, { backgroundColor: "#003e89", duration: 0.5 });
-        header.classList.add('header-white');
-        header.classList.remove('header-video');
-      } else {
-        gsap.to(header, { backgroundColor: "rgba(255, 255, 255, .2)", duration: 0.5 });
-        header.classList.add('header-video');
-        header.classList.remove('header-white');
-      }
-    });
   });
+
+  submenuLinks.forEach((link, index) => {
+      link.parentElement.setAttribute('id', `menu-item-${index}`);
+      link.addEventListener('click', function(e) {
+          e.preventDefault();
+          toggleSubMenu(this);
+      });
+  });
+
+  window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) { // Ayarlamak için mesafeyi değiştirin
+          gsap.to(header, { backgroundColor: "#003e89", duration: 0.5 });
+          header.classList.add('header-white');
+          header.classList.remove('header-video');
+      } else {
+          gsap.to(header, { backgroundColor: "rgba(255, 255, 255, .2)", duration: 0.5 });
+          header.classList.add('header-video');
+          header.classList.remove('header-white');
+      }
+  });
+});
+
+
   
 
 let shape = gsap.timeline({

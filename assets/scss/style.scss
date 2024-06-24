@@ -5,7 +5,9 @@ $Pcolor : #666;
 $SecondMainColor: #f5f5f5;
 $secondColorGrey : #a4a4a4;
 $PopUpColor : #b1b1b1;
-
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .1) !important;
+}
 body {
     margin: 0;
     padding: 0;
@@ -397,6 +399,12 @@ header {
         width: 50%;
 
         opacity: 0;
+
+        .DffAl{
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+        }
     }
 
     .popup-left ul {
@@ -422,7 +430,56 @@ header {
             }
         }
     }
-
+    .popup-left ul .submenu {
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-left: 20px;
+    
+        li {
+            margin: 10px 0;
+    
+            a {
+                text-decoration: none;
+                color: $secondColorGrey;
+                font-size: 30px;
+                font-weight: 400;
+                transition: .3s ease-in-out;
+            }
+    
+            &:hover {
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .popup-right .submenu {
+        display: none;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-left: 20px;
+    
+        li {
+            margin: 10px 0;
+    
+            a {
+                text-decoration: none;
+                color: $secondColorGrey;
+                font-size: 30px;
+                font-weight: 400;
+                transition: .3s ease-in-out;
+            }
+    
+            &:hover {
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
     .popup-right {
         display: flex;
         flex-direction: column;
@@ -1111,7 +1168,9 @@ footer {
         justify-content: center;
         padding: 2rem 0;
         position: relative;
-
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-color: #393939;
         &::after {
             content: "";
             position: absolute;
@@ -1386,7 +1445,9 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70%;
+    width: 85%;
+    border-top-left-radius: 20% !important;
+    border-bottom-right-radius: 20% !important;
 }
 
 .cta-content {
@@ -1402,16 +1463,18 @@ footer {
     }
 }
 
-.custom-btn {
-    background-color: $thememainColor; 
-    border: none; 
-    color: white; 
+.custom-btn {    
+    background: transparent;
+    color: black;
+    border: 1px solid;
     padding: 15px 30px; 
     font-size: 18px; 
     font-weight: bold; 
     display: inline-flex;
     align-items: center; 
     transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    width: 30%;
+    justify-content: center;
   }
   .custom-btn i {
     margin-right: 10px;
@@ -1420,6 +1483,7 @@ footer {
   .custom-btn:hover {
     background-color: #0056b3; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); 
+    color: white;
   }
 
 .geometric-shape {
@@ -1592,15 +1656,70 @@ footer {
   .section {
     height: 90vh;
     padding: 20px;
-    background-color: #e0e0e0;
+    background-color: #fff9f8ed;
     margin-bottom: 10px;
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 0.5s, transform 0.5s;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 70px 45px;
+    border-radius: 30px ;
+
+    .HeadingArea{
+        h2{
+            position: relative;
+            margin-bottom: 30px;
+            font-size: 70px;
+            &::before{
+                content: "";
+                position: absolute;
+                top: -10px;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: rgba(0, 0, 0, 0.1882352941);
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: rgba(0, 0, 0, 0.1882352941);  
+            }
+         
+        }
+    }
+    .TextAndButtn {
+        h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #636363;
+        }
+
+        .SoMoreBtn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
   }
   
   .section:nth-child(odd) {
-    background-color: #d3d3d3;
+    background-color: #003e8912;
+
   }
   
   .GsapFixSection {
@@ -1927,6 +2046,15 @@ input[type="checkbox"]:checked {
 	.container {
 		width: 100%;
 	}
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    .geometric-shape {
+        display: none;
+    }
+=======
+>>>>>>> d5738630c1191bc725ae6ea836064fe9e51003e4
+>>>>>>> Stashed changes
 }
 
 .dna-section {
@@ -1939,9 +2067,19 @@ input[type="checkbox"]:checked {
 	top: 80px;
 }
 
+<<<<<<< Updated upstream
 .geometric-shape {
 	display: none;
 }
+=======
+<<<<<<< HEAD
+
+=======
+.geometric-shape {
+	display: none;
+}
+>>>>>>> d5738630c1191bc725ae6ea836064fe9e51003e4
+>>>>>>> Stashed changes
 
 footer {
 	.CopyRightArea {
@@ -1952,4 +2090,124 @@ footer {
 			display: none;
 		}
 	}
+<<<<<<< Updated upstream
 }
+=======
+<<<<<<< HEAD
+}
+
+
+.Doc {
+    position: relative;
+    
+    .doctor-names {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+        position: -webkit-sticky; /* For Safari */
+        position: sticky;
+        top: 145px;
+        .stickyArea {
+
+
+            a {
+                display: block;
+                margin: 0 0 10px;
+                font-size: 18px;
+                color: #333;
+                text-decoration: none;
+
+                &:hover {
+                    color: #007bff; /* Bootstrap primary color */
+                }
+
+                &.activeDoc {
+                    font-weight: bold;
+                    color: #007bff; /* Bootstrap primary color */
+                }
+            }
+
+            hr {
+                margin: 10px 0;
+                border: 0;
+                border-top: 1px solid #808080;
+            }
+        }
+    }
+
+    .doctor-info {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        margin-bottom: 20px;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            margin: 0 0 10px;
+        }
+
+        .doctor-details {
+            margin-top: 20px;
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+
+                th, td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                }
+
+                th {
+                    background-color: #f2f2f2;
+                    font-weight: bold;
+                }
+
+                td {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+
+.logosArea{
+    padding: 5rem 0;
+    padding-top: 5px;
+}
+
+
+  .content-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+=======
+}
+>>>>>>> d5738630c1191bc725ae6ea836064fe9e51003e4
+>>>>>>> Stashed changes
