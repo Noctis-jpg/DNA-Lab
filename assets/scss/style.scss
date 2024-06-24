@@ -235,7 +235,22 @@ header {
     background-color: rgba(255, 255, 255, .2);
     backdrop-filter: blur(10px);
     padding: .5rem 0;
+.Lang_Search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    span{
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        margin-right: .6rem;
+    }
+    .searchAreea{
+     
 
+    }
+}
     .Logo {
         position: relative;
         z-index: 9999;
@@ -297,7 +312,7 @@ header {
     }
 
     .btn {
-        margin-left: 15px;
+        margin-left: 20px;
         padding: 10px 20px;
         border: 1px solid #fff;
         color: #fff;
@@ -307,7 +322,7 @@ header {
 
     .header-white .btn {
         border-color: #000;
-        color: #000;
+        color: #000; 
     }
 
     .menu-toggle {
@@ -404,6 +419,31 @@ header {
             display: flex;
             align-items: start;
             flex-direction: column;
+
+            h4{
+                color: white;
+            }
+            span{
+                color: white;
+                font-weight: 400;
+            }
+            .smIcons{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20%;
+                margin-top: 1rem;
+
+                li{
+                    list-style: none;
+                }
+            }
+            .TelLink{
+                padding: 1rem 0;
+                i{
+                    margin-right: .5rem;
+                }
+            }
         }
     }
 
@@ -656,7 +696,7 @@ header {
         h4 {
             font-size: 25px;
             font-weight: 300;
-            width: 50%;
+            width: 80%;
             text-align: center;
             color: rgb(75, 75, 75);
         }
@@ -707,7 +747,7 @@ header {
             color: #ffffff;
             line-height: 1.6;
             text-align: justify;
-            width: 80%;
+            width: 100%;
             font-size: 22px;
             font-weight: 300;
         }
@@ -2046,15 +2086,11 @@ input[type="checkbox"]:checked {
 	.container {
 		width: 100%;
 	}
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
+
     .geometric-shape {
         display: none;
     }
-=======
->>>>>>> d5738630c1191bc725ae6ea836064fe9e51003e4
->>>>>>> Stashed changes
+
 }
 
 .dna-section {
@@ -2067,19 +2103,15 @@ input[type="checkbox"]:checked {
 	top: 80px;
 }
 
-<<<<<<< Updated upstream
-.geometric-shape {
-	display: none;
-}
-=======
-<<<<<<< HEAD
 
-=======
 .geometric-shape {
 	display: none;
 }
->>>>>>> d5738630c1191bc725ae6ea836064fe9e51003e4
->>>>>>> Stashed changes
+
+.geometric-shape {
+	display: none;
+}
+
 
 footer {
 	.CopyRightArea {
@@ -2090,11 +2122,9 @@ footer {
 			display: none;
 		}
 	}
-<<<<<<< Updated upstream
+
 }
-=======
-<<<<<<< HEAD
-}
+
 
 
 .Doc {
@@ -2207,7 +2237,4 @@ footer {
     flex-direction: column;
     justify-content: center;
   }
-=======
-}
->>>>>>> d5738630c1191bc725ae6ea836064fe9e51003e4
->>>>>>> Stashed changes
+

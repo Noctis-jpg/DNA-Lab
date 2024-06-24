@@ -236,20 +236,20 @@ document.addEventListener("DOMContentLoaded", function() {
           .to(popupMenu.querySelector('.popup-left'), { opacity: 0, duration: 0.25 })
           .to(popupMenu.querySelector('.popup-right'), { opacity: 0, duration: 0.25 }, "-=0.25")
           .to(popupMenu, { width: '0', height: '0', opacity: 0, duration: 0.5 });
-      closeAllSubMenus(); // Menü kapatıldığında tüm alt menüleri de kapatalım
+      closeAllSubMenus();
   }
 
   function toggleSubMenu(link) {
       const submenu = link.nextElementSibling;
       
       if (!submenu || !submenu.classList.contains('submenu')) {
-          return; // Eğer alt menü yoksa veya sınıfı 'submenu' değilse, çık
+          return;
       }
 
       if (submenu.style.display === 'block' && submenu.style.opacity === '1') {
           closeSubMenu(submenu, link);
       } else {
-          closeAllSubMenus(); // Açmadan önce diğer açık olan alt menüleri kapatalım
+          closeAllSubMenus();
           openSubMenu(submenu, link);
       }
   }
@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   window.addEventListener('scroll', function() {
-      if (window.scrollY > 400) { // Ayarlamak için mesafeyi değiştirin
+      if (window.scrollY > 400) { 
           gsap.to(header, { backgroundColor: "#003e89", duration: 0.5 });
           header.classList.add('header-white');
           header.classList.remove('header-video');
