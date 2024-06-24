@@ -1506,21 +1506,25 @@ footer {
     position: relative;
 
     &::before{
-        content: "DNA LAB";
-        background-color:white;
+        content: '';
         position: absolute;
-        left: -50px;
+        left: -70px;
         bottom: -50px;
-        width: 270px;
-        height: 270px;
         border-radius: 100%;
         display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: 400;
-    border-bottom-left-radius: 0;
-    color: #213b89;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        font-weight: 400;
+        border-bottom-left-radius: 0;
+        color: #213b89;
+        width: 300px;
+        height: 300px;
+        background-image: url(https://seoagency.ist/dna-lab/assets/images/dna-logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-right: 25px solid white;
     }
 
     h1 {
@@ -1699,7 +1703,7 @@ footer {
     top: 35%;
     left: 0;
     width: 360px;
-    background-color: rgba(244, 244, 244, 0.9); 
+    background-color:transparent;
     z-index: 10; 
     display: none; 
     padding: 20px;
