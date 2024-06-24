@@ -381,7 +381,7 @@ var swiper = new Swiper(".Certifates", {
     onLeaveBack: () => gsap.to(".sidebar", { display: "none", autoAlpha: 0 }),
     onLeave: () => gsap.to(".sidebar", { display: "none", autoAlpha: 0 }),
     onEnterBack: () => gsap.to(".sidebar", { display: "block", autoAlpha: 1 }),
-    markers: true 
+    markers: false 
   });
   
 

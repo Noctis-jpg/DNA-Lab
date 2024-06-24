@@ -91,13 +91,16 @@ $PopUpColor : #b1b1b1;
         position: fixed;
         background-color: #003e89;
         .Logo{
+            left: -2rem;
             img{
                 width: 250px;
                 height: 60px;
                   
             }
         }
-        
+        .btn{
+            display: none;
+        }
     }  
     .popup-menu {
         position: fixed;
@@ -715,5 +718,19 @@ $PopUpColor : #b1b1b1;
     }
     .corporateSpace{
         padding: 3rem 25px;
-    }   
+    }  
+    
+    .cta-wrapper{
+        .cta-section{
+            .cta-content{
+                padding-left: 0%;
+                margin-bottom: 15rem;
+
+                &::before{
+                    bottom: -300px;
+                }
+            }
+        }
+    }
+    
 }

@@ -522,6 +522,10 @@ header .menu-toggle.active .hamburger::after {
   font-weight: 500;
 }
 
+.OtherVideoPage .VideoArea video {
+  height: 50vh;
+}
+
 .DetailPage {
   padding: 3rem 0;
   position: relative;
@@ -1229,8 +1233,11 @@ footer .about-link {
   display: flex;
   justify-content: center;
 }
+.cta-wrapper .shadow {
+  box-shadow: 0 0rem 0rem rgba(0, 0, 0, 0) !important;
+}
 .cta-wrapper .cta-section {
-  background-color: #ffffff;
+  background-color: #213b89;
   border: 1px solid #dddddd;
   position: relative;
   z-index: 1;
@@ -1238,32 +1245,52 @@ footer .about-link {
   align-items: center;
   justify-content: center;
   width: 85%;
-  border-top-left-radius: 20% !important;
-  border-bottom-right-radius: 20% !important;
+  border-radius: 5px;
 }
 .cta-wrapper .cta-content {
-  width: 85%;
+  width: 100%;
+  padding-left: 25%;
+  position: relative;
+}
+.cta-wrapper .cta-content::before {
+  content: "DNA LAB";
+  background-color: white;
+  position: absolute;
+  left: -50px;
+  bottom: -50px;
+  width: 270px;
+  height: 270px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 400;
+  border-bottom-left-radius: 0;
+  color: #213b89;
 }
 .cta-wrapper .cta-content h1 {
   font-size: 36px;
-  color: #333333;
+  font-weight: 400;
+  color: #f5f5f5;
 }
 .cta-wrapper .cta-content p {
   font-size: 18px;
-  color: #666666;
+  color: #f5f5f5;
+  font-weight: 300;
 }
 .cta-wrapper .custom-btn {
   background: transparent;
-  color: black;
+  color: #f5f5f5;
   border: 1px solid;
-  padding: 15px 30px;
+  padding: 10px 20px;
   font-size: 18px;
   font-weight: bold;
   display: inline-flex;
   align-items: center;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  width: 30%;
   justify-content: center;
+  font-weight: 400;
 }
 .cta-wrapper .custom-btn i {
   margin-right: 10px;
@@ -1291,6 +1318,7 @@ footer .about-link {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 2.5rem;
   padding-bottom: 6rem;
 }
 .Statisc .StatstcHeader h2 {
@@ -1595,6 +1623,11 @@ footer .about-link {
 }
 .contact-section .contact-info .info-box p li a:hover, .contact-section .contact-info .info-box ul li a:hover {
   text-decoration: underline;
+}
+.contact-section .contact-info .not_shadow {
+  box-shadow: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.3294117647);
+  border-radius: 0;
 }
 .contact-section .map {
   margin-top: 20px;
@@ -1908,11 +1941,12 @@ footer .CopyRightArea::after {
 }
 
 .content-card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 0px rgb(33, 59, 137);
   background-color: #fff;
   padding: 20px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 90%;
 }/*# sourceMappingURL=style.css.map */

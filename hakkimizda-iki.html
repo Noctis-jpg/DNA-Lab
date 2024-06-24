@@ -9,13 +9,35 @@
   <link rel="stylesheet" href="assets/css/particle.css">
 </head>
 <body>
-    <header>
+    <header id="header" class="header-video">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3">
+            <div class="row align-items-center">
+                <div class="col-md-7 col-6 d-flex align-items-center">
                     <div class="Logo">
-                        <img src="./assets/images/dna-logo.png" alt="" srcset="">
+                        <img src="./assets/images/dna-logo.png" alt="DNA Logo">
                     </div>
+                    <nav class="MobileHidden">
+                        <ul>
+                            <li><a href="#">Kurumsal</a></li>
+                            <li><a href="#">Hizmetler</a></li>
+                            <li><a href="#">Testler </a></li>
+                            <li><a href="#">İletişim</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-2 col-md-1 text-end">
+                    <button class="menu-toggle">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+                <div class="col-md-3 col-4 d-md-flex justify-content-end">
+                    <div class="Lang_Search">
+                    <span>TR</span>
+                    <span>EN</span>
+                    <span class="searchAreea"><i class="fa-solid fa-magnifying-glass"></i></span>
+                </div>
+                    <a href="#" class="btn">Bireysel Giriş</a>
+                    <a href="#" class="btn">Kurumsal Giriş</a>
                 </div>
             </div>
         </div>

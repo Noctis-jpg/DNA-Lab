@@ -78,9 +78,15 @@
     position: fixed;
     background-color: #003e89;
   }
+  header .Logo {
+    left: -2rem;
+  }
   header .Logo img {
     width: 250px;
     height: 60px;
+  }
+  header .btn {
+    display: none;
   }
   .popup-menu {
     position: fixed;
@@ -609,5 +615,12 @@
   }
   .corporateSpace {
     padding: 3rem 25px;
+  }
+  .cta-wrapper .cta-section .cta-content {
+    padding-left: 0%;
+    margin-bottom: 15rem;
+  }
+  .cta-wrapper .cta-section .cta-content::before {
+    bottom: -300px;
   }
 }/*# sourceMappingURL=responsive.css.map */
